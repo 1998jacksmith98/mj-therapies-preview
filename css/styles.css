@@ -273,6 +273,7 @@ footer a { color: #fff; text-decoration: none; }
     min-height: 0;
     height: min(430px, calc(100svh - 210px));
   }
+  .hero-copy { padding-bottom: 76px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-in { animation: none; opacity: 1; transform: none; }
