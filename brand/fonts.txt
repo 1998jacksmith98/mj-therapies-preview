@@ -1,0 +1,7 @@
+Font identification (unconfirmed guesses)
+
+- Display/logo “MJ”: high-contrast serif, closest visual guesses: Playfair Display, Cormorant Garamond, or Libre Baskerville. Evidence: burgundy M/J letterforms in the profile logo at https://www.instagram.com/mjtherapies/ (also visible on the business-card post: https://www.instagram.com/p/DLCHI24oOFu/).
+- “THERAPIES” in the logo: narrow uppercase sans/condensed lettering with tracking; closest guesses: Oswald, Roboto Condensed, or Montserrat with increased letter spacing. Same evidence URLs above.
+- Body/social copy: Instagram UI rendering only; no brand body font was specified or exposed.
+
+GAP: no font files, CSS brand sheet, or explicit font naming was available in the public Instagram profile/posts. Verify with Jack/client before production lock-up.

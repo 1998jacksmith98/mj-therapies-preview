@@ -1,0 +1,12 @@
+filename | URL | slide | description
+owner-landing-01.jpg | https://www.instagram.com/p/DLcIN0woTH6/ | 1 | Full direct post original; owner-specified main landing hero, osteopathy/wellbeing positioning.
+owner-about-01.jpg | https://www.instagram.com/p/DMM568Cof_N/?img_index=1 | 1 | Full direct carousel original; owner/about portrait (graduation/Bachelor of Osteopathy slide).
+review-01.jpg | https://www.instagram.com/stories/highlights/18048127895420823/ | Reviews highlight slide | Readable customer-review screenshot (full 1080x1920 story original).
+review-02.jpg | https://www.instagram.com/stories/highlights/18048127895420823/ | Reviews highlight slide 2 | Readable customer-review screenshot (full 1080x1920 story original).
+review-03.jpg | https://www.instagram.com/stories/highlights/18048127895420823/ | Reviews highlight slide 3 | Readable customer-review screenshot (full 1080x1920 story original).
+review-04.jpg | https://www.instagram.com/stories/highlights/18048127895420823/ | Reviews highlight slide 4 | Readable customer-review screenshot (full 1080x1920 story original).
+review-05.jpg | https://www.instagram.com/stories/highlights/18048127895420823/ | Reviews highlight slide 5 | Readable customer-review screenshot (full 1080x1920 story original).
+action-01.jpg | https://www.instagram.com/p/DUajgDgDJlR/ | 1 | Boxer ankle-injury recovery/rehab treatment story; action/therapy context.
+action-02.jpg | https://www.instagram.com/p/DUOUQLyjO-b/ | 1 | Leg-length imbalance assessment/correction session; action/therapy context.
+logo.jpg | https://www.instagram.com/mjtherapies/ | profile image | Best publicly available profile-logo asset retrieved; 150x150 avatar, flagged as low resolution.
+scroll-scrub.mp4 | https://www.instagram.com/p/DTqjDeMDNBQ/ | video | Cavitation/manual-therapy reel source, re-encoded to Jack’s scroll-scrub specs; audio removed.

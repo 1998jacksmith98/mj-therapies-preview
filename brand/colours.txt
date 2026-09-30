@@ -1,0 +1,6 @@
+MJ Therapies sampled palette (from photos/logo.jpg, 150x150 profile avatar)
+
+Accent burgundy: #BC1823 — RGB(188, 24, 35)
+Light warm background: #F5F4F1 — RGB(245, 244, 241)
+
+Method: representative pixel colours sampled from the downloaded logo with FFmpeg RGB conversion; logo is a small avatar, so treat these as approximate brand cues, not a colour-managed brand guide.
