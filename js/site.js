@@ -14,6 +14,7 @@ document.getElementById("site-header").innerHTML = `
         <a href="index.html" class="${page === "index.html" ? "active" : ""}">Home</a>
         <a href="#book">Book</a>
         <a href="#reviews">Reviews</a>
+        <a href="#about">About</a>
         <a href="${IG}" target="_blank" rel="noreferrer">Instagram</a>
       </nav>
       <button class="menu-btn" type="button" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -24,6 +25,7 @@ document.getElementById("site-header").innerHTML = `
       <a href="index.html">Home</a>
       <a href="#book">Book</a>
       <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
       <a href="${IG}" target="_blank" rel="noreferrer">Instagram</a>
     </nav>
   </div>
@@ -38,7 +40,7 @@ document.getElementById("site-footer").innerHTML = `
     <div class="wrap footer-grid">
       <div>
         <p class="foot-name">MJ Therapies</p>
-        <p>Osteopathy in Gravesend, Meopham and Eltham.</p>
+        <p>Osteopathy with Morgan. Gravesend, Meopham and Eltham.</p>
       </div>
       <div>
         <p><a href="#book">Book a clinic</a></p>

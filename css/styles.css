@@ -36,7 +36,6 @@ h1, h2, h3 {
 }
 .preview-banner a { color: #fff; text-underline-offset: 3px; }
 .wrap { width: min(1100px, calc(100% - 32px)); margin: 0 auto; }
-.narrow { max-width: 640px; }
 #site-header { position: sticky; top: 0; z-index: 50; }
 .site-header {
   background: rgba(245,244,241,0.94);
@@ -178,12 +177,12 @@ h3 { font-size: 28px; }
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
-.split { display: grid; gap: 28px; }
-.copy p { margin: 12px 0 0; color: #5c564f; }
-.include-list { list-style: none; margin: 16px 0 0; padding: 0; }
+.copy p, .about-grid p { margin: 12px 0 0; color: #5c564f; }
+.include-list { list-style: none; margin: 16px 0 0; padding: 0; max-width: 640px; }
 .include-list li { padding: 10px 0; border-bottom: 1px solid var(--line); }
-.photo-frame { margin: 0; overflow: hidden; background: #ddd; }
-.photo-frame img { width: 100%; height: 100%; object-fit: cover; min-height: 280px; }
+.about-grid { display: grid; gap: 24px; }
+.about-photo { margin: 0; }
+.about-photo img { width: 100%; height: auto; }
 .cards { display: grid; gap: 14px; margin-top: 24px; }
 .card {
   background: var(--card);
@@ -203,9 +202,8 @@ h3 { font-size: 28px; }
   gap: 12px;
   margin-top: 22px;
 }
-.reviews figure, .results figure { margin: 0; overflow: hidden; background: #ddd; }
-.reviews img { width: 100%; height: auto; }
-.results img { width: 100%; height: 280px; object-fit: cover; }
+.reviews figure, .results figure { margin: 0; background: transparent; }
+.reviews img, .results img { width: 100%; height: auto; object-fit: contain; }
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -260,11 +258,10 @@ footer a { color: #fff; text-decoration: none; }
   .hero { min-height: 86vh; }
   .hero-copy { padding: 56px 0 64px; }
   .section { padding: 72px 0; }
-  .split { grid-template-columns: 1.05fr 0.95fr; align-items: center; }
   .cards { grid-template-columns: 1fr 1fr 1fr; }
   .reviews { grid-template-columns: 1fr 1fr 1fr; }
   .results { grid-template-columns: 1fr 1fr; }
-  .results img { height: 360px; }
+  .about-grid { grid-template-columns: 1fr 1fr; align-items: center; }
   .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; }
   .scrub-copy { left: max(16px, calc((100% - 1100px) / 2)); bottom: 56px; }
 }
@@ -275,7 +272,6 @@ footer a { color: #fff; text-decoration: none; }
     min-height: 0;
     height: min(430px, calc(100svh - 210px));
   }
-  .photo-frame { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-in { animation: none; opacity: 1; transform: none; }
