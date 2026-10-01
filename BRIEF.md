@@ -23,6 +23,7 @@ All listed dimensions are the downloaded file dimensions; JPEGs are direct CDN o
 - `photos/review-03.jpg` — 1080x1920, 93,342 bytes. Readable customer-review screenshot from the Reviews highlight.
 - `photos/review-04.jpg` — 1080x1920, 94,108 bytes. Readable customer-review screenshot from the Reviews highlight.
 - `photos/review-05.jpg` — 1080x1920, 62,348 bytes. Readable customer-review screenshot from the Reviews highlight.
+- `photos/review-06.jpg` — 1350x1687, 214,124 bytes. Readable footballer/customer testimonial graphic from `DUVH3T4jO5k`.
 - `photos/action-01.jpg` — 1350x1687, 200,345 bytes. Boxer rehab/action context.
 - `photos/action-02.jpg` — 1350x1687, 135,212 bytes. Assessment/correction action context.
 - `photos/logo.jpg` — 150x150, 2,602 bytes. Profile logo; best publicly available version retrieved, low-resolution flag.
@@ -52,6 +53,6 @@ The bio says “DM TO BOOK 📲”. No public phone number, email, website, book
 - No login wall encountered; the browser session was visibly logged in as `@halfpennydigital`.
 - `photos/logo.jpg` is only a 150x150 profile avatar; request a vector/high-resolution logo from client before print or large-format use.
 - The two required owner assets are near-square portrait originals (1440x1461 and 1440x1443), retained uncropped as delivered.
-- Review pack contains five clear, readable customer-review screenshots from the account’s Reviews highlight. The highlight stories show reviewer names and text; validate permissions and names before publishing testimonials.
+- Review pack contains six clear, readable customer reviews (five screenshots from the account’s Reviews highlight and one footballer/customer testimonial graphic). The highlight stories show reviewer names and text; validate permissions and names before publishing testimonials.
 - A before/after-style scapular-reset reel is present at https://www.instagram.com/reel/DLZOXvLI3qL/ (caption includes “BeforeAndAfter”); no still was added because only a cover thumbnail was publicly available and the full-original rule prohibits shipping a thumbnail as a photo.
 - Exact appointment times, phone/email, booking destination, service-area boundaries, and font files remain unknown.

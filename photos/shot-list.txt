@@ -6,6 +6,7 @@ review-02.jpg | https://www.instagram.com/stories/highlights/18048127895420823/ 
 review-03.jpg | https://www.instagram.com/stories/highlights/18048127895420823/ | Reviews highlight slide 3 | Readable customer-review screenshot (full 1080x1920 story original).
 review-04.jpg | https://www.instagram.com/stories/highlights/18048127895420823/ | Reviews highlight slide 4 | Readable customer-review screenshot (full 1080x1920 story original).
 review-05.jpg | https://www.instagram.com/stories/highlights/18048127895420823/ | Reviews highlight slide 5 | Readable customer-review screenshot (full 1080x1920 story original).
+review-06.jpg | https://www.instagram.com/p/DUVH3T4jO5k/ | 1 | Footballer review / Ebbsfleet United striker five-star testimonial about back pain treatment; full post original 1350x1687.
 action-01.jpg | https://www.instagram.com/p/DUajgDgDJlR/ | 1 | Boxer ankle-injury recovery/rehab treatment story; action/therapy context.
 action-02.jpg | https://www.instagram.com/p/DUOUQLyjO-b/ | 1 | Leg-length imbalance assessment/correction session; action/therapy context.
 logo.jpg | https://www.instagram.com/mjtherapies/ | profile image | Best publicly available profile-logo asset retrieved; 150x150 avatar, flagged as low resolution.
