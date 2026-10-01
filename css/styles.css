@@ -266,17 +266,27 @@ footer a { color: #fff; text-decoration: none; }
   .scrub-copy { left: max(16px, calc((100% - 1100px) / 2)); bottom: 56px; }
 }
 @media (max-width: 819px) {
-  .hero .btn-row { display: none; }
-  .mobile-cta { display: flex; }
-  body { padding-bottom: 84px; }
+  .mobile-cta {
+    display: flex;
+    transform: translateY(110%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
+  .dock-on .mobile-cta {
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .dock-on { padding-bottom: 84px; }
   .hero {
     min-height: 0;
-    height: min(430px, calc(100svh - 210px));
+    height: min(480px, calc(100svh - 140px));
   }
-  .hero-copy { padding-bottom: 76px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-in { animation: none; opacity: 1; transform: none; }
+  .mobile-cta { transition: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .scrub { height: auto; }
   .scrub-sticky { position: relative; height: 70vh; }
