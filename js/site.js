@@ -17,7 +17,7 @@ document.getElementById("site-header").innerHTML = `
         <a href="#about">About</a>
         <a href="${IG}" target="_blank" rel="noreferrer">Instagram</a>
       </nav>
-      <button class="menu-btn" type="button" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
   <div class="mobile-nav" hidden>
@@ -63,9 +63,13 @@ btn.addEventListener("click", () => {
   if (open) {
     nav.setAttribute("hidden", "");
     document.body.classList.remove("menu-open");
+    btn.setAttribute("aria-label", "Menu");
+    btn.setAttribute("aria-expanded", "false");
   } else {
     nav.removeAttribute("hidden");
     document.body.classList.add("menu-open");
+    btn.setAttribute("aria-label", "Close");
+    btn.setAttribute("aria-expanded", "true");
   }
 });
 
@@ -73,6 +77,8 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", () => {
     nav.setAttribute("hidden", "");
     document.body.classList.remove("menu-open");
+    btn.setAttribute("aria-label", "Menu");
+    btn.setAttribute("aria-expanded", "false");
   });
 });
 
