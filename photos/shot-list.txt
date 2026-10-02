@@ -10,4 +10,4 @@ review-06.jpg | https://www.instagram.com/p/DUVH3T4jO5k/ | 1 | Footballer review
 action-01.jpg | https://www.instagram.com/p/DUajgDgDJlR/ | 1 | Boxer ankle-injury recovery/rehab treatment story; action/therapy context.
 action-02.jpg | https://www.instagram.com/p/DUOUQLyjO-b/ | 1 | Leg-length imbalance assessment/correction session; action/therapy context.
 logo.jpg | https://www.instagram.com/mjtherapies/ | profile image | Best publicly available profile-logo asset retrieved; 150x150 avatar, flagged as low resolution.
-scroll-scrub.mp4 | https://www.instagram.com/p/DTqjDeMDNBQ/ | video | Cavitation/manual-therapy reel source, re-encoded to Jack’s scroll-scrub specs; audio removed.
+scroll-scrub.mp4 | Jack-supplied attachment | video | Jack-supplied attachment, scroll-scrub encode.

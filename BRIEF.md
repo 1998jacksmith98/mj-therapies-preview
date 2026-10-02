@@ -27,7 +27,7 @@ All listed dimensions are the downloaded file dimensions; JPEGs are direct CDN o
 - `photos/action-01.jpg` — 1350x1687, 200,345 bytes. Boxer rehab/action context.
 - `photos/action-02.jpg` — 1350x1687, 135,212 bytes. Assessment/correction action context.
 - `photos/logo.jpg` — 150x150, 2,602 bytes. Profile logo; best publicly available version retrieved, low-resolution flag.
-- `videos/scroll-scrub.mp4` — 720x1280, 15,037,931 bytes, 39.866667 s. H.264, 30/1 fps, yuv420p, no audio, no B-frames, keyframe interval 8, faststart.
+- `videos/scroll-scrub.mp4` — 720x1280, 1,748,658 bytes, ~5.97s (5.966667 s), 179 frames. H.264, 30/1 fps, yuv420p, no audio, no B-frames, keyframe interval 8, faststart. Jack-supplied attachment (not IG), encoded for scroll-scrub; replaces the previous reel.
 - `photos/shot-list.txt` — source/slide/description manifest.
 - `brand/colours.txt`, `brand/fonts.txt` — palette and typography notes.
 
