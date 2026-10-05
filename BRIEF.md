@@ -14,7 +14,7 @@ MJ Therapies is a manual-therapy/osteopathy practice run by an osteopath with ho
 - Tone observed: supportive, educational, reassuring, movement-focused, locally rooted.
 
 ## Assets list
-All listed dimensions are the downloaded file dimensions; JPEGs are direct CDN originals/renditions from the linked Instagram posts, not square profile-grid thumbnails unless flagged.
+All listed dimensions are the file dimensions. Instagram JPEGs are direct CDN originals/renditions from the linked posts, not square profile-grid thumbnails unless flagged. Jack-supplied stills are noted on each bullet.
 
 - `photos/owner-landing-01.jpg` — 1440x1461, 422,709 bytes. Required landing original from `DLcIN0woTH6`.
 - `photos/owner-about-01.jpg` — 1440x1443, 594,800 bytes. Required slide 1 original from `DMM568Cof_N?img_index=1`.
@@ -26,6 +26,9 @@ All listed dimensions are the downloaded file dimensions; JPEGs are direct CDN o
 - `photos/review-06.jpg` — 1350x1687, 214,124 bytes. Readable footballer/customer testimonial graphic from `DUVH3T4jO5k`.
 - `photos/action-01.jpg` — 1350x1687, 200,345 bytes. Boxer rehab/action context.
 - `photos/action-02.jpg` — 1350x1687, 135,212 bytes. Assessment/correction action context.
+- `photos/owner-portrait-navy.jpg` — 1408x1408, 95,548 bytes (~95 KB). Professional headshot of Morgan in a navy polo (chest-up, smiling). Jack-supplied 5 Oct 2026.
+- `photos/action-foot-treatment.jpg` — 1183x1379, 51,097 bytes (~51 KB). Clinical action / foot treatment still. Jack-supplied 5 Oct 2026.
+- `photos/assessment-feet-socks.jpg` — 1214x1386, 53,922 bytes (~54 KB). Top-down clinical assessment: patient’s feet in white New Balance socks on treatment-table paper, dark trousers. Jack-supplied 5 Oct 2026.
 - `photos/logo.jpg` — 150x150, 2,602 bytes. Profile logo; best publicly available version retrieved, low-resolution flag.
 - `videos/scroll-scrub.mp4` — 720x1280, 1,748,658 bytes, ~5.97s (5.966667 s), 179 frames. H.264, 30/1 fps, yuv420p, no audio, no B-frames, keyframe interval 8, faststart. Jack-supplied attachment (not IG), encoded for scroll-scrub; replaces the previous reel.
 - `photos/shot-list.txt` — source/slide/description manifest.
@@ -51,7 +54,7 @@ The bio says “DM TO BOOK 📲”. No public phone number, email, website, book
 
 ## Gaps/flags
 - No login wall encountered; the browser session was visibly logged in as `@halfpennydigital`.
-- `photos/logo.jpg` is only a 150x150 profile avatar; request a vector/high-resolution logo from client before print or large-format use.
+- `photos/logo.jpg` is only a 150x150 profile avatar; request a vector/high-resolution logo from client before print or large-format use. The three Jack-supplied stills added 5 Oct 2026 (`owner-portrait-navy.jpg`, `action-foot-treatment.jpg`, `assessment-feet-socks.jpg`) are extra portrait and clinical photos and do not replace that high-resolution logo.
 - The two required owner assets are near-square portrait originals (1440x1461 and 1440x1443), retained uncropped as delivered.
 - Review pack contains six clear, readable customer reviews (five screenshots from the account’s Reviews highlight and one footballer/customer testimonial graphic). The highlight stories show reviewer names and text; validate permissions and names before publishing testimonials.
 - A before/after-style scapular-reset reel is present at https://www.instagram.com/reel/DLZOXvLI3qL/ (caption includes “BeforeAndAfter”); no still was added because only a cover thumbnail was publicly available and the full-original rule prohibits shipping a thumbnail as a photo.
