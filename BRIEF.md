@@ -14,7 +14,7 @@ MJ Therapies is a manual-therapy/osteopathy practice run by an osteopath with ho
 - Tone observed: supportive, educational, reassuring, movement-focused, locally rooted.
 
 ## Assets list
-All listed dimensions are the file dimensions. Instagram JPEGs are direct CDN originals/renditions from the linked posts, not square profile-grid thumbnails unless flagged. Jack-supplied stills are noted on each bullet.
+All listed dimensions are the file dimensions. Instagram JPEGs are direct CDN originals/renditions from the linked posts, not square profile-grid thumbnails unless flagged. Jack-supplied stills are noted on each bullet. The three graphics Jack requested on 5 Oct 2026 (`graphic-three-locations.jpg`, `graphic-what-i-can-help-with.jpg`, `graphic-meet-morgan.jpg`) are full CDN originals (`dst-jpg_e35_tt6`), square as posted — not grid thumbnails.
 
 - `photos/owner-landing-01.jpg` — 1440x1461, 422,709 bytes. Required landing original from `DLcIN0woTH6`.
 - `photos/owner-about-01.jpg` — 1440x1443, 594,800 bytes. Required slide 1 original from `DMM568Cof_N?img_index=1`.
@@ -29,6 +29,9 @@ All listed dimensions are the file dimensions. Instagram JPEGs are direct CDN or
 - `photos/owner-portrait-navy.jpg` — 1408x1408, 95,548 bytes (~95 KB). Professional headshot of Morgan in a navy polo (chest-up, smiling). Jack-supplied 5 Oct 2026.
 - `photos/action-foot-treatment.jpg` — 1183x1379, 51,097 bytes (~51 KB). Clinical action / foot treatment still. Jack-supplied 5 Oct 2026.
 - `photos/assessment-feet-socks.jpg` — 1214x1386, 53,922 bytes (~54 KB). Top-down clinical assessment: patient’s feet in white New Balance socks on treatment-table paper, dark trousers. Jack-supplied 5 Oct 2026.
+- `photos/graphic-three-locations.jpg` — 1975×1975, 424,715 bytes. Full CDN original (`dst-jpg_e35_tt6`), square as posted — not a grid thumbnail. From https://www.instagram.com/p/DeHUe8JMM_j/ (`DeHUe8JMM_j`) — “Three Locations” graphic (Gravesend, Meopham, Eltham) with lower-back treatment photo and Book Now. Jack-requested 5 Oct 2026.
+- `photos/graphic-what-i-can-help-with.jpg` — 2042×2042, 494,739 bytes. Full CDN original (`dst-jpg_e35_tt6`), square as posted — not a grid thumbnail. From https://www.instagram.com/p/DeHUAvgMOzI/ (`DeHUAvgMOzI`) — “What I Can Help With” services graphic. Jack-requested 5 Oct 2026.
+- `photos/graphic-meet-morgan.jpg` — 2036×2036, 619,036 bytes. Full CDN original (`dst-jpg_e35_tt6`), square as posted — not a grid thumbnail. From https://www.instagram.com/p/DeHTMx_skfP/ (`DeHTMx_skfP`) — “Meet Morgan – Osteopath” portrait + bio graphic. Jack-requested 5 Oct 2026.
 - `photos/logo.jpg` — 150x150, 2,602 bytes. Profile logo; best publicly available version retrieved, low-resolution flag.
 - `videos/scroll-scrub.mp4` — 720x1280, 1,748,658 bytes, ~5.97s (5.966667 s), 179 frames. H.264, 30/1 fps, yuv420p, no audio, no B-frames, keyframe interval 8, faststart. Jack-supplied attachment (not IG), encoded for scroll-scrub; replaces the previous reel.
 - `photos/shot-list.txt` — source/slide/description manifest.
@@ -38,6 +41,7 @@ All listed dimensions are the file dimensions. Instagram JPEGs are direct CDN or
 ### Locations
 - ANA Therapies — Gravesend & Meopham (bio; price-list post labels Gravesend).
 - Moreno Osteopathy — Eltham.
+- The “Three Locations” post (https://www.instagram.com/p/DeHUe8JMM_j/, `photos/graphic-three-locations.jpg`) confirms the three places named on the graphic: Gravesend, Meopham, and Eltham.
 
 ### Hours / clinic days
 A booking post states: Moreno Osteopathy, Monday / Tuesday / Wednesday; ANA Therapies, Thursday / Saturday. Exact appointment times were not published in the accessible profile/posts.
