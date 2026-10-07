@@ -3,7 +3,6 @@ const IG = "https://www.instagram.com/mjtherapies/";
 document.documentElement.classList.add("js");
 
 document.getElementById("site-header").innerHTML = `
-  <div class="preview-banner">Preview mockup by <a href="https://halfpennydigital.co.uk/">Halfpenny Digital</a>. Not the live site yet.</div>
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="#about">
