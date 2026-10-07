@@ -164,19 +164,12 @@ if (!reduce) {
     if (e.key === "ArrowRight") setSplit(r.left + Math.min(0.92, current + 0.06) * r.width);
   });
   handle.addEventListener("pointerdown", (e) => {
+    e.preventDefault();
     handle.setPointerCapture(e.pointerId);
     setSplit(e.clientX);
   });
   handle.addEventListener("pointermove", (e) => {
     if (handle.hasPointerCapture(e.pointerId)) setSplit(e.clientX);
-  });
-  box.addEventListener("pointerdown", (e) => {
-    if (e.target === handle) return;
-    box.setPointerCapture(e.pointerId);
-    setSplit(e.clientX);
-  });
-  box.addEventListener("pointermove", (e) => {
-    if (box.hasPointerCapture(e.pointerId)) setSplit(e.clientX);
   });
 })();
 

@@ -18,37 +18,51 @@
 .grad-band {
   position: relative;
   margin: 36px 0 0;
+  min-height: 560px;
+  height: min(78vh, 720px);
   overflow: hidden;
+  background: #f6f3ee;
 }
 .grad-band img {
-  width: 100%;
-  height: min(92vh, 760px);
-  min-height: 520px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 88%;
+  height: 100%;
   object-fit: cover;
-  object-position: center 16%;
+  object-position: 78% 28%;
+  transform: scale(0.86);
+  transform-origin: right center;
 }
 .grad-band figcaption {
   position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 16px;
-  max-width: 520px;
-  padding: 18px 18px 16px;
+  z-index: 2;
+  left: 14px;
+  right: auto;
+  top: 50%;
+  bottom: auto;
+  width: min(250px, 58%);
+  transform: translateY(-50%);
+  padding: 16px 16px 14px;
   border-radius: 18px;
-  background: rgba(246, 243, 238, 0.84);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(246, 243, 238, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(12px);
 }
 .grad-band .script-line {
   margin: 0 0 8px;
-  font-size: clamp(36px, 9vw, 54px);
+  font-size: clamp(32px, 8vw, 48px);
 }
 .grad-band figcaption p:last-child {
   color: #1c1614;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.45;
 }
+.compare { touch-action: pan-y; }
+.handle { touch-action: none; }
 @media (min-width: 900px) {
-  .grad-band figcaption { left: 40px; bottom: 36px; padding: 24px 26px 22px; }
+  .grad-band { min-height: 640px; height: 680px; }
+  .grad-band img { width: 62%; object-position: 70% 30%; transform: scale(0.92); }
+  .grad-band figcaption { left: 48px; width: 420px; padding: 24px 26px 22px; }
   .grad-band figcaption p:last-child { font-size: 16px; }
 }
