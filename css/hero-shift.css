@@ -1,0 +1,18 @@
+.hero-photo { object-position: 46% 12% !important; }
+.hero-frame::before {
+  content: "" !important;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, #f6f3ee 0%, #f6f3ee 40%, rgba(246, 243, 238, 0.9) 50%, rgba(246, 243, 238, 0) 64%) !important;
+}
+.hero-copy .meet-word,
+.hero-copy .lede,
+.hero-copy .role span { text-shadow: none; }
+@media (min-width: 900px) {
+  .hero-photo { object-position: 52% 18% !important; }
+  .hero-frame::before {
+    background: linear-gradient(90deg, #f6f3ee 0%, #f6f3ee 28%, rgba(246, 243, 238, 0.55) 40%, rgba(246, 243, 238, 0) 54%) !important;
+  }
+}
