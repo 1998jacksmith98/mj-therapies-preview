@@ -1,1 +1,1 @@
-  <link rel="stylesheet" href="css/hero-split.css?v=mobile2" />
+  <link rel="stylesheet" href="css/hero-shift.css?v=3" />
