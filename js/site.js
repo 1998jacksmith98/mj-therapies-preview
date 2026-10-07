@@ -1,37 +1,38 @@
 const IG = "https://www.instagram.com/mjtherapies/";
 
-const page = location.pathname.split("/").pop() || "index.html";
+document.documentElement.classList.add("js");
 
 document.getElementById("site-header").innerHTML = `
-  <div class="preview-banner">Preview mockup by <a href="https://halfpennydigital.co.uk/">Halfpenny Digital</a> — not the live site yet</div>
+  <div class="preview-banner">Preview mockup by <a href="https://halfpennydigital.co.uk/">Halfpenny Digital</a>. Not the live site yet.</div>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="index.html">
+      <a class="brand" href="#about">
         <img src="photos/logo.jpg" alt="" />
-        <span>MJ <em>Therapies</em></span>
+        <span>
+          <span class="brand-name">MJ Therapies</span>
+          <span class="brand-sub">Osteopathy</span>
+        </span>
       </a>
       <nav class="desk-nav">
-        <a href="index.html" class="${page === "index.html" ? "active" : ""}">Home</a>
+        <a href="#about">About</a>
+        <a href="#help">Treatment</a>
         <a href="#book">Book</a>
         <a href="#reviews">Reviews</a>
-        <a href="#about">About</a>
         <a href="${IG}" target="_blank" rel="noreferrer">Instagram</a>
       </nav>
+      <a class="btn header-book" href="#book">Book</a>
       <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
   <div class="mobile-nav" hidden>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="#about">About</a>
+      <a href="#help">Treatment</a>
+      <a href="#approach">How I work</a>
       <a href="#book">Book</a>
       <a href="#reviews">Reviews</a>
-      <a href="#about">About</a>
       <a href="${IG}" target="_blank" rel="noreferrer">Instagram</a>
     </nav>
-  </div>
-  <div class="mobile-cta">
-    <a class="btn" href="#book">Book</a>
-    <a class="btn ghost" href="${IG}" target="_blank" rel="noreferrer">Instagram</a>
   </div>
 `;
 
@@ -39,11 +40,13 @@ document.getElementById("site-footer").innerHTML = `
   <footer>
     <div class="wrap footer-grid">
       <div>
-        <p class="foot-name">MJ Therapies</p>
-        <p>Osteopathy with Morgan. Gravesend, Meopham and Eltham.</p>
+        <p class="script foot-script">MJ Therapies</p>
+        <p class="foot-sub">Osteopathy</p>
+        <p>With Morgan. Gravesend, Meopham and Eltham.</p>
       </div>
       <div>
         <p><a href="#book">Book a clinic</a></p>
+        <p><a href="#help">What I can help with</a></p>
         <p><a href="${IG}" target="_blank" rel="noreferrer">Instagram</a></p>
       </div>
       <div>
@@ -82,23 +85,6 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
-(function dockAfterHero() {
-  const hero = document.querySelector(".hero");
-  if (!hero) return;
-  const sync = () => {
-    if (window.innerWidth > 819) {
-      document.body.classList.remove("dock-on");
-      return;
-    }
-    const bottom = hero.getBoundingClientRect().bottom;
-    if (bottom < 90) document.body.classList.add("dock-on");
-    else document.body.classList.remove("dock-on");
-  };
-  window.addEventListener("scroll", sync, { passive: true });
-  window.addEventListener("resize", sync);
-  sync();
-})();
-
 const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (!reduce) {
@@ -133,13 +119,24 @@ if (!reduce) {
   const fit = () => { beforeImg.style.width = box.offsetWidth + "px"; };
   const setSplit = (clientX) => {
     const rect = box.getBoundingClientRect();
-    const p = Math.min(0.96, Math.max(0.04, (clientX - rect.left) / rect.width));
+    const p = Math.min(0.92, Math.max(0.08, (clientX - rect.left) / rect.width));
     const pct = (p * 100) + "%";
     before.style.width = pct;
     handle.style.left = pct;
+    handle.setAttribute("aria-valuenow", String(Math.round(p * 100)));
   };
   fit();
+  handle.setAttribute("role", "slider");
+  handle.setAttribute("aria-valuemin", "8");
+  handle.setAttribute("aria-valuemax", "92");
+  handle.setAttribute("aria-valuenow", "50");
   window.addEventListener("resize", fit);
+  handle.addEventListener("keydown", (e) => {
+    const rect = box.getBoundingClientRect();
+    const current = (parseFloat(before.style.width) || 50) / 100;
+    if (e.key === "ArrowLeft") setSplit(rect.left + Math.max(0.08, current - 0.06) * rect.width);
+    if (e.key === "ArrowRight") setSplit(rect.left + Math.min(0.92, current + 0.06) * rect.width);
+  });
   handle.addEventListener("pointerdown", (e) => {
     handle.setPointerCapture(e.pointerId);
     setSplit(e.clientX);
