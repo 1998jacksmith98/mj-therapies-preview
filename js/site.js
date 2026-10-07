@@ -125,16 +125,17 @@ if (!reduce) {
     handle.setAttribute("aria-valuenow", String(Math.round(p * 100)));
   };
   fit();
+  const rect = box.getBoundingClientRect();
+  setSplit(rect.left + rect.width * 0.14);
   handle.setAttribute("role", "slider");
   handle.setAttribute("aria-valuemin", "8");
   handle.setAttribute("aria-valuemax", "92");
-  handle.setAttribute("aria-valuenow", "50");
   window.addEventListener("resize", fit);
   handle.addEventListener("keydown", (e) => {
-    const rect = box.getBoundingClientRect();
-    const current = (parseFloat(before.style.width) || 50) / 100;
-    if (e.key === "ArrowLeft") setSplit(rect.left + Math.max(0.08, current - 0.06) * rect.width);
-    if (e.key === "ArrowRight") setSplit(rect.left + Math.min(0.92, current + 0.06) * rect.width);
+    const r = box.getBoundingClientRect();
+    const current = (parseFloat(before.style.width) || 14) / 100;
+    if (e.key === "ArrowLeft") setSplit(r.left + Math.max(0.08, current - 0.06) * r.width);
+    if (e.key === "ArrowRight") setSplit(r.left + Math.min(0.92, current + 0.06) * r.width);
   });
   handle.addEventListener("pointerdown", (e) => {
     handle.setPointerCapture(e.pointerId);
@@ -151,4 +152,36 @@ if (!reduce) {
   box.addEventListener("pointermove", (e) => {
     if (box.hasPointerCapture(e.pointerId)) setSplit(e.clientX);
   });
+})();
+
+(function reviews() {
+  const scroller = document.getElementById("quote-scroller");
+  const track = document.getElementById("quotes");
+  const dots = document.getElementById("quote-dots");
+  if (!scroller || !track) return;
+  const cards = [...track.children];
+  const buttons = cards.map((_, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("aria-label", "Review " + (i + 1));
+    b.addEventListener("click", () => cards[i].scrollIntoView({ behavior: reduce ? "auto" : "smooth", inline: "center", block: "nearest" }));
+    dots.appendChild(b);
+    return b;
+  });
+  const mark = () => {
+    const mid = scroller.scrollLeft + scroller.clientWidth / 2;
+    let best = 0;
+    let bestDist = Infinity;
+    cards.forEach((card, i) => {
+      const center = card.offsetLeft + card.offsetWidth / 2;
+      const dist = Math.abs(center - mid);
+      const on = dist < card.offsetWidth * 0.45;
+      card.classList.toggle("is-active", on);
+      if (dist < bestDist) { bestDist = dist; best = i; }
+    });
+    buttons.forEach((b, i) => b.classList.toggle("is-on", i === best));
+  };
+  mark();
+  scroller.addEventListener("scroll", mark, { passive: true });
+  window.addEventListener("resize", mark);
 })();
