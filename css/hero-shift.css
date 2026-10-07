@@ -1,6 +1,12 @@
 .hero-frame {
-  height: calc(100svh - 64px) !important;
-  min-height: 560px !important;
+  height: calc(100dvh - 64px) !important;
+  max-height: calc(100dvh - 64px) !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+.hero, .hero-frame, .hero-photo {
+  animation: none !important;
+  transition: none !important;
 }
 .hero-photo {
   position: absolute !important;
@@ -12,6 +18,7 @@
   height: 100% !important;
   margin: 0 !important;
   transform: none !important;
+  scale: 1 !important;
   aspect-ratio: auto !important;
   object-fit: cover;
   object-position: 38% 42% !important;
@@ -30,7 +37,11 @@
   background: linear-gradient(90deg, #f6f3ee 0%, #f6f3ee 34%, rgba(246, 243, 238, 0.88) 48%, rgba(246, 243, 238, 0) 64%) !important;
 }
 @media (min-width: 900px) {
-  .hero-frame { height: calc(100svh - 72px) !important; min-height: 620px !important; }
+  .hero-frame {
+    height: calc(100dvh - 72px) !important;
+    max-height: none !important;
+    min-height: 620px !important;
+  }
   .hero-photo {
     width: 100% !important;
     object-position: 58% 42% !important;
