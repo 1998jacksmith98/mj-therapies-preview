@@ -29,10 +29,10 @@
     .band { margin-top: 28px; }
     .band img { width: 100%; max-height: 420px; object-fit: cover; object-position: center 40%; }
     .loc-script { font-size: clamp(56px, 10vw, 92px); }
-    .compare { position: relative; aspect-ratio: 1183 / 1379; height: auto; max-height: none; min-height: 0; overflow: hidden; background: #efeae4; touch-action: none; user-select: none; margin-top: 18px; }
-    .compare-after { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; max-width: none; background: #efeae4; }
+    .compare { position: relative; aspect-ratio: 1214 / 1386; height: auto; overflow: hidden; background: #efeae4; touch-action: none; user-select: none; margin-top: 18px; }
+    .compare-after { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; max-width: none; }
     .compare-before { position: absolute; inset: 0 auto 0 0; width: 50%; overflow: hidden; }
-    .compare-before img { position: absolute; top: 0; left: 0; height: 100%; width: auto; max-width: none; object-fit: contain; object-position: center bottom; }
+    .compare-before img { position: absolute; top: 0; left: 0; height: 100%; width: auto; max-width: none; object-fit: cover; object-position: center bottom; }
     .tag { position: absolute; top: 14px; z-index: 2; background: rgba(36,28,28,.72); color: #fff; padding: 6px 10px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
     .tag-before { left: 12px; }
     .tag-after { right: 12px; }
@@ -47,7 +47,6 @@
 </head>
 <body>
   <div id="site-header"></div>
-
   <section class="hero">
     <img class="hero-img" src="photos/owner-portrait-navy.jpg" alt="Morgan, osteopath at MJ Therapies" />
     <div class="wrap hero-copy">
@@ -60,7 +59,6 @@
       </div>
     </div>
   </section>
-
   <section class="section" id="about">
     <div class="wrap about-grid">
       <div>
@@ -74,12 +72,9 @@
           <div class="point reveal"><span class="mark"><svg viewBox="0 0 24 24"><path d="M12 19s-7-4.2-7-9a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 4.8-7 9-7 9z"/></svg></span><div><strong>All welcome</strong><span>Sports injuries through to everyday aches</span></div></div>
         </div>
       </div>
-      <figure class="about-photo reveal">
-        <img src="photos/owner-about-01.jpg" alt="Morgan in graduation gown, Bachelor of Osteopathy" />
-      </figure>
+      <figure class="about-photo reveal"><img src="photos/owner-about-01.jpg" alt="Morgan in graduation gown, Bachelor of Osteopathy" /></figure>
     </div>
   </section>
-
   <section class="section alt" id="help">
     <div class="wrap">
       <div class="help-head">
@@ -97,7 +92,6 @@
       <figure class="band reveal"><img src="photos/owner-landing-01.jpg" alt="Hands-on treatment with Morgan" /></figure>
     </div>
   </section>
-
   <section class="section">
     <div class="wrap">
       <p class="kicker reveal">How I work</p>
@@ -107,7 +101,6 @@
       <div class="btn-row reveal"><a class="btn" href="#book">Book</a></div>
     </div>
   </section>
-
   <section class="section alt" id="book">
     <div class="wrap">
       <p class="kicker reveal">Book</p>
@@ -120,7 +113,6 @@
       </div>
     </div>
   </section>
-
   <section class="section" id="compare">
     <div class="wrap">
       <p class="kicker reveal">Leg length</p>
@@ -138,7 +130,6 @@
       <p class="reveal">Drag to see the correction.</p>
     </div>
   </section>
-
   <section class="section" id="reviews">
     <div class="wrap">
       <p class="kicker reveal">Reviews</p>
@@ -153,7 +144,6 @@
       </div>
     </div>
   </section>
-
   <section class="section alt" id="clinic">
     <div class="wrap">
       <p class="kicker reveal">Treatment</p>
@@ -165,7 +155,6 @@
       </div>
     </div>
   </section>
-
   <div id="site-footer"></div>
   <script src="js/site.js"></script>
 </body>
