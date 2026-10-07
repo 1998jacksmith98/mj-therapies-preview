@@ -14,3 +14,41 @@
     scale: 1 !important;
   }
 }
+
+.grad-band {
+  position: relative;
+  margin: 36px 0 0;
+  overflow: hidden;
+}
+.grad-band img {
+  width: 100%;
+  height: min(92vh, 760px);
+  min-height: 520px;
+  object-fit: cover;
+  object-position: center 16%;
+}
+.grad-band figcaption {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  max-width: 520px;
+  padding: 18px 18px 16px;
+  border-radius: 18px;
+  background: rgba(246, 243, 238, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+}
+.grad-band .script-line {
+  margin: 0 0 8px;
+  font-size: clamp(36px, 9vw, 54px);
+}
+.grad-band figcaption p:last-child {
+  color: #1c1614;
+  font-size: 14px;
+  line-height: 1.5;
+}
+@media (min-width: 900px) {
+  .grad-band figcaption { left: 40px; bottom: 36px; padding: 24px 26px 22px; }
+  .grad-band figcaption p:last-child { font-size: 16px; }
+}
