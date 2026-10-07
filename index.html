@@ -1,3 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MJ Therapies — Osteopathy with Morgan, Gravesend, Meopham and Eltham</title>
+  <meta name="description" content="I’m Morgan, an osteopath. Book Gravesend, Meopham or Eltham through the existing clinic booking pages." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .script { font-family: "Great Vibes", cursive; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--burgundy); line-height: 0.9; }
+    .meet { font-size: clamp(64px, 12vw, 108px); margin: 0 0 8px; }
+    .rule { width: 72px; height: 1px; background: var(--burgundy); margin: 14px 0 18px; border: 0; }
+    .points { display: grid; gap: 14px; margin-top: 22px; }
+    .point { display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: center; }
+    .mark { width: 52px; height: 52px; border-radius: 50%; background: var(--burgundy); color: #fff; display: grid; place-items: center; }
+    .mark svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.7; }
+    .point strong { display: block; letter-spacing: 0.12em; font-size: 12px; text-transform: uppercase; }
+    .point span { color: #5c564f; font-size: 14px; }
+    .help-head { text-align: center; max-width: 680px; margin: 0 auto 28px; }
+    .help-head .script { font-size: clamp(52px, 9vw, 84px); display: block; }
+    .treats { display: grid; gap: 14px; }
+    .treat { background: #fffcf8; border: 1px solid var(--line); padding: 18px; display: grid; grid-template-columns: 54px 1fr; gap: 12px; align-items: start; }
+    .treat h3 { font-family: Montserrat, sans-serif; font-size: 15px; letter-spacing: 0.02em; font-weight: 600; line-height: 1.3; }
+    .treat p { margin: 6px 0 0; color: #5c564f; font-size: 14px; }
+    .soft-mark { background: #f6eee8; color: var(--burgundy); }
+    .band { margin-top: 28px; }
+    .band img { width: 100%; max-height: 420px; object-fit: cover; object-position: center 40%; }
+    .loc-script { font-size: clamp(56px, 10vw, 92px); }
+    .compare { position: relative; aspect-ratio: 1183 / 1379; height: auto; max-height: none; min-height: 0; overflow: hidden; background: #efeae4; touch-action: none; user-select: none; margin-top: 18px; }
+    .compare-after { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; max-width: none; background: #efeae4; }
+    .compare-before { position: absolute; inset: 0 auto 0 0; width: 50%; overflow: hidden; }
+    .compare-before img { position: absolute; top: 0; left: 0; height: 100%; width: auto; max-width: none; object-fit: contain; object-position: center bottom; }
+    .tag { position: absolute; top: 14px; z-index: 2; background: rgba(36,28,28,.72); color: #fff; padding: 6px 10px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+    .tag-before { left: 12px; }
+    .tag-after { right: 12px; }
+    .handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 44px; margin-left: -22px; border: 0; background: transparent; z-index: 3; cursor: ew-resize; }
+    .handle:before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #fff; transform: translateX(-50%); }
+    .handle:after { content: "\2194"; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 42px; height: 42px; border-radius: 50%; background: var(--burgundy); color: #fff; display: grid; place-items: center; font-size: 18px; box-shadow: 0 0 0 4px rgba(255,255,255,.45); }
+    @media (min-width: 820px) {
+      .treats { grid-template-columns: 1fr 1fr; }
+      .points { max-width: 460px; }
+    }
   </style>
-  <link rel="stylesheet" href="css/compare.css?v=fullfeet2" />
 </head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="hero">
+    <img class="hero-img" src="photos/owner-portrait-navy.jpg" alt="Morgan, osteopath at MJ Therapies" />
+    <div class="wrap hero-copy">
+      <p class="kicker hero-in d1">Gravesend · Meopham · Eltham</p>
+      <h1 class="hero-in d2">Move better.</h1>
+      <p class="hero-in d3">I’m Morgan (BOst). My mission at MJ Therapies is to help people move better, feel better, live better!</p>
+      <div class="btn-row hero-in d4">
+        <a class="btn" href="#book">Book</a>
+        <a class="btn ghost" href="https://www.instagram.com/mjtherapies/" target="_blank" rel="noreferrer">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <p class="kicker reveal">Osteopath</p>
+        <h2 class="script meet reveal">Morgan</h2>
+        <hr class="rule reveal" />
+        <p class="reveal">I graduated with a Bachelor of Osteopathy in 2025 and have been practising in sports massage for over 3 years. Sport is where it started. Osteopathy is where it landed. I help people of all ages move better, feel stronger, and get back to what they do.</p>
+        <div class="points">
+          <div class="point reveal"><span class="mark"><svg viewBox="0 0 24 24"><path d="M4 15l4-6 3 3 5-7"/><circle cx="18" cy="6" r="1.4" fill="currentColor" stroke="none"/></svg></span><div><strong>Sports background</strong><span>Experience working with athletes</span></div></div>
+          <div class="point reveal"><span class="mark"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 19c1.4-3 3.6-4.5 7-4.5S17.6 16 19 19"/></svg></span><div><strong>Individual treatment</strong><span>Tailored to your goals, lifestyle and body</span></div></div>
+          <div class="point reveal"><span class="mark"><svg viewBox="0 0 24 24"><path d="M12 19s-7-4.2-7-9a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 4.8-7 9-7 9z"/></svg></span><div><strong>All welcome</strong><span>Sports injuries through to everyday aches</span></div></div>
+        </div>
+      </div>
+      <figure class="about-photo reveal">
+        <img src="photos/owner-about-01.jpg" alt="Morgan in graduation gown, Bachelor of Osteopathy" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="section alt" id="help">
+    <div class="wrap">
+      <div class="help-head">
+        <p class="kicker reveal">Treatment tailored to you</p>
+        <h2 class="script reveal">What I can help with</h2>
+      </div>
+      <div class="treats" data-stagger>
+        <article class="treat"><span class="mark soft-mark"><svg viewBox="0 0 24 24"><path d="M12 3v18M9 6c2 1 4 1 6 0M8 12c2.4 1 5.6 1 8 0M9 18c2-1 4-1 6 0"/></svg></span><div><h3>Back and neck pain</h3><p>Reduce the pain, improve movement, and stop it coming back.</p></div></article>
+        <article class="treat"><span class="mark soft-mark"><svg viewBox="0 0 24 24"><path d="M4 16c2-6 4-8 6-8s3 3 5 3 3-2 5-5"/><path d="M4 20h16"/></svg></span><div><h3>Sports injuries</h3><p>Assessment, treatment and rehab so you can get back to what you do.</p></div></article>
+        <article class="treat"><span class="mark soft-mark"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><path d="M8 20c.6-3 2-4.5 4-4.5s3.4 1.5 4 4.5"/></svg></span><div><h3>Tension and headaches</h3><p>Ease them coming back, and work on posture.</p></div></article>
+        <article class="treat"><span class="mark soft-mark"><svg viewBox="0 0 24 24"><path d="M8 4h8M9 4v6l-3 8h12l-3-8V4"/></svg></span><div><h3>Posture and biomechanics</h3><p>Find what is driving it and change the pattern.</p></div></article>
+        <article class="treat"><span class="mark soft-mark"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="2.4"/><path d="M9 20c.4-4 1.2-6 3-7 1.8 1 2.6 3 3 7"/></svg></span><div><h3>Pregnancy and postnatal</h3><p>Support through pregnancy, recovery and after.</p></div></article>
+        <article class="treat"><span class="mark soft-mark"><svg viewBox="0 0 24 24"><path d="M12 19s-7-4.2-7-9a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 4.8-7 9-7 9z"/></svg></span><div><h3>General aches and pains</h3><p>Everyday life, work and training.</p></div></article>
+      </div>
+      <figure class="band reveal"><img src="photos/owner-landing-01.jpg" alt="Hands-on treatment with Morgan" /></figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="kicker reveal">How I work</p>
+      <h2 class="script reveal" style="font-size:clamp(52px,8vw,80px)">Hands-on care</h2>
+      <hr class="rule reveal" />
+      <p class="reveal">Every session is tailored to you. A proper case history, a movement assessment, hands-on treatment, then clear aftercare. Osteopathy looks at how the whole body works together, not just the bit that hurts.</p>
+      <div class="btn-row reveal"><a class="btn" href="#book">Book</a></div>
+    </div>
+  </section>
+
+  <section class="section alt" id="book">
+    <div class="wrap">
+      <p class="kicker reveal">Book</p>
+      <h2 class="script loc-script reveal">Three locations</h2>
+      <p class="reveal">Flexible appointments. All welcome. Pick the clinic that suits you.</p>
+      <div class="cards" data-stagger>
+        <article class="card"><span class="mark"><svg viewBox="0 0 24 24"><path d="M12 21s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10z"/><circle cx="12" cy="11" r="2"/></svg></span><h3>Gravesend</h3><p>ANA Therapies</p><div class="btn-row"><a class="btn" href="https://maps.google.com/?q=ANA+Therapies+128+Milton+Road+Gravesend" target="_blank" rel="noreferrer">Map</a><a class="btn" href="https://anatherapies.janeapp.co.uk/locations/ana-therapies-gravesend/book#/staff_member/4" target="_blank" rel="noreferrer">Book</a></div></article>
+        <article class="card"><span class="mark"><svg viewBox="0 0 24 24"><path d="M12 21s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10z"/><circle cx="12" cy="11" r="2"/></svg></span><h3>Meopham</h3><p>ANA Therapies</p><div class="btn-row"><a class="btn" href="https://maps.google.com/?q=ANA+Therapies+Meopham+Leisure+Centre+Wrotham+Road" target="_blank" rel="noreferrer">Map</a><a class="btn" href="https://anatherapies.janeapp.co.uk/locations/ana-therapies-meopham/book#/staff_member/4" target="_blank" rel="noreferrer">Book</a></div></article>
+        <article class="card"><span class="mark"><svg viewBox="0 0 24 24"><path d="M12 21s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10z"/><circle cx="12" cy="11" r="2"/></svg></span><h3>Eltham</h3><p>Moreno Osteopathy</p><div class="btn-row"><a class="btn" href="https://maps.google.com/?q=Moreno+Osteopathy+186+Bexley+Road+Eltham" target="_blank" rel="noreferrer">Map</a><a class="btn" href="https://booking.myosteopathy.io/EQEykT4bCL/8qHSA99DLWytGll" target="_blank" rel="noreferrer">Book</a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="compare">
+    <div class="wrap">
+      <p class="kicker reveal">Leg length</p>
+      <h2 class="script reveal" style="font-size:clamp(52px,8vw,80px)">Today’s session</h2>
+      <p class="reveal">Assessing and correcting a small leg length imbalance. Osteopathy is about restoring balance and comfort.</p>
+      <div class="compare" id="compare-box">
+        <img class="compare-after" src="photos/assessment-feet-socks.jpg" alt="Legs level after treatment">
+        <div class="compare-before" id="compare-before">
+          <img src="photos/action-foot-treatment.jpg" alt="Uneven leg length before treatment">
+        </div>
+        <span class="tag tag-before">Before</span>
+        <span class="tag tag-after">After</span>
+        <button class="handle" id="compare-handle" type="button" aria-label="Drag to compare before and after"></button>
+      </div>
+      <p class="reveal">Drag to see the correction.</p>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <div class="wrap">
+      <p class="kicker reveal">Reviews</p>
+      <h2 class="script reveal" style="font-size:clamp(52px,8vw,80px)">What people say</h2>
+      <p class="swipe-hint reveal">Swipe</p>
+      <div class="reviews">
+        <figure><img src="photos/review-01.jpg" alt="Client review" /></figure>
+        <figure><img src="photos/review-02.jpg" alt="Client review" /></figure>
+        <figure><img src="photos/review-03.jpg" alt="Client review" /></figure>
+        <figure><img src="photos/review-04.jpg" alt="Client review" /></figure>
+        <figure><img src="photos/review-05.jpg" alt="Client review" /></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="clinic">
+    <div class="wrap">
+      <p class="kicker reveal">Treatment</p>
+      <h2 class="script reveal" style="font-size:clamp(52px,8vw,80px)">Testimonials</h2>
+      <div class="results" data-stagger>
+        <figure><img src="photos/action-01.jpg" alt="Rehab session" /></figure>
+        <figure><img src="photos/action-02.jpg" alt="Cheerleader shoulder treatment" /></figure>
+        <figure><img src="photos/review-06.jpg" alt="Treatment testimonial" /></figure>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="js/site.js"></script>
+</body>
+</html>
