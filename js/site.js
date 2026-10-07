@@ -39,9 +39,9 @@ document.getElementById("site-footer").innerHTML = `
   <footer>
     <div class="wrap footer-grid">
       <div>
-        <p class="script foot-script">MJ Therapies</p>
+        <p class="foot-word">MJ Therapies</p>
         <p class="foot-sub">Osteopathy</p>
-        <p>With Morgan. Gravesend, Meopham and Eltham.</p>
+        <p>With Morgan.<br />Gravesend, Meopham and Eltham.</p>
       </div>
       <div>
         <p><a href="#book">Book a clinic</a></p>
@@ -158,7 +158,7 @@ if (!reduce) {
   const scroller = document.getElementById("quote-scroller");
   const track = document.getElementById("quotes");
   const dots = document.getElementById("quote-dots");
-  if (!scroller || !track) return;
+  if (!scroller || !track || !dots) return;
   const cards = [...track.children];
   const buttons = cards.map((_, i) => {
     const b = document.createElement("button");
@@ -175,8 +175,7 @@ if (!reduce) {
     cards.forEach((card, i) => {
       const center = card.offsetLeft + card.offsetWidth / 2;
       const dist = Math.abs(center - mid);
-      const on = dist < card.offsetWidth * 0.45;
-      card.classList.toggle("is-active", on);
+      card.classList.toggle("is-active", dist < card.offsetWidth * 0.45);
       if (dist < bestDist) { bestDist = dist; best = i; }
     });
     buttons.forEach((b, i) => b.classList.toggle("is-on", i === best));
