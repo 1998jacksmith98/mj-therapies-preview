@@ -31,12 +31,12 @@
     .loc-script { font-size: clamp(56px, 10vw, 92px); }
     .compare { position: relative; aspect-ratio: 1214 / 1386; height: auto; overflow: hidden; background: #efeae4; touch-action: none; user-select: none; margin-top: 18px; }
     .compare-after { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; max-width: none; }
-    .compare-before { position: absolute; inset: 0 auto 0 0; width: 50%; overflow: hidden; }
+    .compare-before { position: absolute; inset: 0 auto 0 0; width: 6%; overflow: hidden; }
     .compare-before img { position: absolute; top: 0; left: 0; height: 100%; width: auto; max-width: none; object-fit: cover; object-position: center bottom; }
     .tag { position: absolute; top: 14px; z-index: 2; background: rgba(36,28,28,.72); color: #fff; padding: 6px 10px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
     .tag-before { left: 12px; }
     .tag-after { right: 12px; }
-    .handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 44px; margin-left: -22px; border: 0; background: transparent; z-index: 3; cursor: ew-resize; }
+    .handle { position: absolute; top: 0; bottom: 0; left: 6%; width: 44px; margin-left: -22px; border: 0; background: transparent; z-index: 3; cursor: ew-resize; }
     .handle:before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #fff; transform: translateX(-50%); }
     .handle:after { content: "\2194"; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 42px; height: 42px; border-radius: 50%; background: var(--burgundy); color: #fff; display: grid; place-items: center; font-size: 18px; box-shadow: 0 0 0 4px rgba(255,255,255,.45); }
     @media (min-width: 820px) {
@@ -127,7 +127,7 @@
         <span class="tag tag-after">After</span>
         <button class="handle" id="compare-handle" type="button" aria-label="Drag to compare before and after"></button>
       </div>
-      <p class="reveal">Drag to see the correction.</p>
+      <p class="reveal">Drag right to see the imbalance.</p>
     </div>
   </section>
   <section class="section" id="reviews">
