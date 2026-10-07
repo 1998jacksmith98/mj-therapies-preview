@@ -1,3 +1,4 @@
-.compare { aspect-ratio: 1183 / 1379; height: auto; max-height: none; min-height: 0; background: #efeae4; }
-.compare-after { object-fit: contain; object-position: center bottom; background: #efeae4; }
-.compare-before img { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
+    .compare { position: relative; aspect-ratio: 1183 / 1379; height: auto; max-height: none; min-height: 0; overflow: hidden; background: #efeae4; touch-action: none; user-select: none; margin-top: 18px; }
+    .compare-after { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; max-width: none; background: #efeae4; }
+    .compare-before { position: absolute; inset: 0 auto 0 0; width: 50%; overflow: hidden; }
+    .compare-before img { position: absolute; top: 0; left: 0; height: 100%; width: auto; max-width: none; object-fit: contain; object-position: center bottom; }
