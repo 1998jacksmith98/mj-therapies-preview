@@ -124,50 +124,35 @@ if (!reduce) {
   document.querySelectorAll(".reveal, [data-stagger] > *").forEach((el) => el.classList.add("is-in"));
 }
 
-(function scrub() {
-  const track = document.querySelector(".scrub");
-  const video = document.querySelector(".scrub-video");
-  if (!track || !video) return;
-  video.muted = true;
-  video.setAttribute("playsinline", "");
-  video.setAttribute("webkit-playsinline", "");
-  const arm = () => {
-    video.muted = true;
-    const play = video.play();
-    if (play && play.then) play.then(() => video.pause()).catch(() => {});
+(function compare() {
+  const box = document.getElementById("compare-box");
+  const before = document.getElementById("compare-before");
+  const handle = document.getElementById("compare-handle");
+  if (!box || !before || !handle) return;
+  const beforeImg = before.querySelector("img");
+  const fit = () => { beforeImg.style.width = box.offsetWidth + "px"; };
+  const setSplit = (clientX) => {
+    const rect = box.getBoundingClientRect();
+    const p = Math.min(0.96, Math.max(0.04, (clientX - rect.left) / rect.width));
+    const pct = (p * 100) + "%";
+    before.style.width = pct;
+    handle.style.left = pct;
   };
-  video.addEventListener("loadeddata", arm, { once: true });
-  window.addEventListener("touchstart", arm, { passive: true });
-  window.addEventListener("click", arm);
-  video.addEventListener("ended", () => {
-    video.pause();
-    if (video.duration) video.currentTime = Math.max(video.duration * 0.9, 0);
-    arm();
+  fit();
+  window.addEventListener("resize", fit);
+  handle.addEventListener("pointerdown", (e) => {
+    handle.setPointerCapture(e.pointerId);
+    setSplit(e.clientX);
   });
-  const seen = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => { if (entry.isIntersecting) arm(); });
-  }, { threshold: 0.2 });
-  seen.observe(track);
-  let ticking = false;
-  const update = () => {
-    ticking = false;
-    if (!video.duration) return;
-    if (video.ended) arm();
-    const rect = track.getBoundingClientRect();
-    const run = track.offsetHeight - window.innerHeight;
-    if (run <= 0) return;
-    const scrolled = Math.min(Math.max(-rect.top, 0), run);
-    const t = (scrolled / run) * Math.max(video.duration * 0.92, 0);
-    if (Math.abs(video.currentTime - t) > 0.03) {
-      try { video.currentTime = t; } catch (e) {}
-    }
-  };
-  const onScroll = () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(update);
-  };
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll);
-  video.addEventListener("loadedmetadata", update);
+  handle.addEventListener("pointermove", (e) => {
+    if (handle.hasPointerCapture(e.pointerId)) setSplit(e.clientX);
+  });
+  box.addEventListener("pointerdown", (e) => {
+    if (e.target === handle) return;
+    box.setPointerCapture(e.pointerId);
+    setSplit(e.clientX);
+  });
+  box.addEventListener("pointermove", (e) => {
+    if (box.hasPointerCapture(e.pointerId)) setSplit(e.clientX);
+  });
 })();
