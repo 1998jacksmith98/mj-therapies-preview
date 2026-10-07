@@ -1,0 +1,16 @@
+.desk-nav a, .desk-nav a:hover, .desk-nav a.active { color: #8d1c2b !important; }
+.mobile-nav a { color: #8d1c2b !important; }
+
+@media (max-width: 899px) {
+  .hero-frame {
+    height: var(--hero-lock, 560px) !important;
+    max-height: var(--hero-lock, 560px) !important;
+    min-height: 0 !important;
+  }
+  .hero-photo {
+    height: var(--hero-lock, 560px) !important;
+    max-height: var(--hero-lock, 560px) !important;
+    transform: none !important;
+    scale: 1 !important;
+  }
+}

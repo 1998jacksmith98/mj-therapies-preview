@@ -58,6 +58,32 @@ document.getElementById("site-footer").innerHTML = `
   </footer>
 `;
 
+(function lockHero() {
+  const frame = document.querySelector(".hero-frame");
+  const photo = document.querySelector(".hero-photo");
+  if (!frame) return;
+  let width = window.innerWidth;
+  const lock = () => {
+    if (window.innerWidth >= 900) return;
+    const header = document.querySelector(".site-header");
+    const h = Math.max(480, Math.round(window.innerHeight - (header ? header.offsetHeight : 64)));
+    const px = h + "px";
+    document.documentElement.style.setProperty("--hero-lock", px);
+    frame.style.height = px;
+    frame.style.maxHeight = px;
+    if (photo) {
+      photo.style.height = px;
+      photo.style.maxHeight = px;
+    }
+  };
+  lock();
+  window.addEventListener("resize", () => {
+    if (Math.abs(window.innerWidth - width) < 50) return;
+    width = window.innerWidth;
+    lock();
+  });
+})();
+
 const btn = document.querySelector(".menu-btn");
 const nav = document.querySelector(".mobile-nav");
 btn.addEventListener("click", () => {
@@ -182,5 +208,4 @@ if (!reduce) {
   };
   mark();
   scroller.addEventListener("scroll", mark, { passive: true });
-  window.addEventListener("resize", mark);
 })();
