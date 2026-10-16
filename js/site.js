@@ -17,7 +17,6 @@ document.getElementById("site-header").innerHTML = `
         <a href="#help">Treatment</a>
         <a href="#book">Book</a>
         <a href="#reviews">Reviews</a>
-        <a href="${IG}" target="_blank" rel="noreferrer">Instagram</a>
       </nav>
       <a class="btn header-book" href="#book">Book</a>
       <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -30,7 +29,6 @@ document.getElementById("site-header").innerHTML = `
       <a href="#approach">How I work</a>
       <a href="#book">Book</a>
       <a href="#reviews">Reviews</a>
-      <a href="${IG}" target="_blank" rel="noreferrer">Instagram</a>
     </nav>
   </div>
 `;
