@@ -44,7 +44,10 @@
   }
   .hero-photo {
     width: 100% !important;
-    object-position: 58% 42% !important;
+    height: 118% !important;
+    top: -6% !important;
+    object-position: 46% 38% !important;
+    transform: none !important;
   }
   .hero-frame::before {
     background: linear-gradient(90deg, #f6f3ee 0%, #f6f3ee 28%, rgba(246, 243, 238, 0.55) 40%, rgba(246, 243, 238, 0) 54%) !important;
