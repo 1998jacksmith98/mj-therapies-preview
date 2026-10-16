@@ -1,0 +1,72 @@
+.edit-panel {
+  position: fixed;
+  top: 80px;
+  right: 12px;
+  z-index: 9999;
+  width: 280px;
+  max-height: calc(100vh - 100px);
+  overflow: auto;
+  background: #1c1614;
+  color: #f6f3ee;
+  border-radius: 12px;
+  padding: 14px;
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.35);
+}
+.edit-panel h4 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.edit-panel label {
+  display: block;
+  margin: 10px 0 4px;
+  font-size: 12px;
+  opacity: .8;
+}
+.edit-panel input[type=range] {
+  width: 100%;
+  accent-color: #8d1c2b;
+}
+.edit-panel .row {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.edit-panel button {
+  flex: 1;
+  background: #8d1c2b;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.edit-panel button.ghost {
+  background: transparent;
+  border: 1px solid #f6f3ee;
+  color: #f6f3ee;
+}
+.edit-panel .values {
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.4;
+  background: #2a2321;
+  padding: 8px;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+.edit-panel .section {
+  border-top: 1px solid #3a3230;
+  padding-top: 12px;
+  margin-top: 12px;
+}
+.edit-panel .section:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
