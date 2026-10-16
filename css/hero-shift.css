@@ -41,13 +41,18 @@
     height: calc(100dvh - 72px) !important;
     max-height: none !important;
     min-height: 620px !important;
+    overflow: hidden !important;
   }
   .hero-photo {
-    width: 100% !important;
-    height: 118% !important;
-    top: -6% !important;
-    object-position: 46% 38% !important;
+    width: 130% !important;
+    height: 145% !important;
+    top: -18% !important;
+    left: auto !important;
+    right: -18% !important;
+    object-fit: cover !important;
+    object-position: 28% 32% !important;
     transform: none !important;
+    scale: 1 !important;
   }
   .hero-frame::before {
     background: linear-gradient(90deg, #f6f3ee 0%, #f6f3ee 28%, rgba(246, 243, 238, 0.55) 40%, rgba(246, 243, 238, 0) 54%) !important;
