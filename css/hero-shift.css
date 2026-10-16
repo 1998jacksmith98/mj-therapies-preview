@@ -44,14 +44,15 @@
     overflow: hidden !important;
   }
   .hero-photo {
-    width: 130% !important;
-    height: 145% !important;
-    top: -18% !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    right: 0 !important;
     left: auto !important;
-    right: -18% !important;
     object-fit: cover !important;
-    object-position: 28% 32% !important;
-    transform: none !important;
+    object-position: 35% 45% !important;
+    transform: scale(0.78) !important;
+    transform-origin: 72% 50% !important;
     scale: 1 !important;
   }
   .hero-frame::before {
