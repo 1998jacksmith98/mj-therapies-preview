@@ -38,6 +38,7 @@ All listed dimensions are the file dimensions. Instagram JPEGs are direct CDN or
 - `photos/logo.jpg` — 150x150, 2,602 bytes. Profile logo; best publicly available version retrieved, low-resolution flag.
 - `videos/scroll-scrub.mp4` — 720x1280, 1,748,658 bytes, ~5.97s (5.966667 s), 179 frames. H.264, 30/1 fps, yuv420p, no audio, no B-frames, keyframe interval 8, faststart. Jack-supplied attachment (not IG), encoded for scroll-scrub; replaces the previous reel.
 - `photos/shot-list.txt` — source/slide/description manifest.
+- `brand/gosc-registered-badge.jpg` — 1371x1229, 96637 bytes. General Osteopathic Council 'I'm Registered' badge, Registration no. 11909 (osteopathy.org.uk). GOsC reg no. 11909. Jack-supplied 18 Oct 2026.
 - `brand/colours.txt`, `brand/fonts.txt` — palette and typography notes.
 
 ## Business details
