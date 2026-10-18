@@ -96,27 +96,40 @@
   }
   .grad-band::before,
   .grad-band::after {
-    content: "{" !important;
+    content: "" !important;
+    display: none !important;
+  }
+  .grad-band .side-fill {
+    display: none;
+  }
+  .grad-band .side-fill {
+    display: block;
     position: absolute;
-    top: 18%;
-    height: 874px;
-    transform: none;
+    top: 42%;
+    transform: translateY(-50%) rotate(-8deg);
     font-family: "Great Vibes", cursive;
-    font-size: 560px;
-    font-weight: 400;
+    font-size: 52px;
     color: #8d1c2b;
-    opacity: 1;
-    line-height: 1;
+    opacity: 0.85;
     pointer-events: none;
     z-index: 0;
+    white-space: nowrap;
+    line-height: 1.1;
   }
-  .grad-band::before {
-    left: 6%;
-    content: "{" !important;
+  .grad-band .side-fill.left {
+    left: 4%;
+    text-align: center;
   }
-  .grad-band::after {
-    right: 6%;
-    content: "}" !important;
+  .grad-band .side-fill.right {
+    right: 4%;
+    text-align: center;
+    transform: translateY(-50%) rotate(8deg);
+  }
+  .grad-band .side-fill span {
+    display: block;
+    font-size: 28px;
+    opacity: 0.7;
+    margin-top: 4px;
   }
   .grad-band figcaption p:last-child {
     order: 1;
@@ -189,4 +202,5 @@
     white-space: nowrap !important;
   }
   .grad-band figcaption p:last-child { font-size: 13.5px !important; line-height: 1.4 !important; }
+  .grad-band .side-fill { display: none !important; }
 }
