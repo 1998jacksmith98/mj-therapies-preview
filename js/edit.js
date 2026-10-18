@@ -3,7 +3,7 @@
 
   const style = document.createElement("link");
   style.rel = "stylesheet";
-  style.href = "css/edit.css?v=5";
+  style.href = "css/edit.css?v=6";
   document.head.appendChild(style);
 
   const heroImg = document.querySelector(".hero-photo");
@@ -13,9 +13,7 @@
     if (!img) return null;
     const frame = img.parentElement;
     const src = img.currentSrc || img.src;
-    // Hide the original img so it cannot affect layout.
     img.style.setProperty("display", "none", "important");
-    // Lock the frame and paint the photo as a background so size never changes.
     frame.style.setProperty("position", "relative", "important");
     frame.style.setProperty("overflow", "hidden", "important");
     frame.style.setProperty("background-image", "url(" + src + ")", "important");
@@ -29,20 +27,21 @@
   const aboutFrame = makeCrop(aboutImg);
 
   const state = {
-    hero: { x: 50, y: 55, crop: 100 },
-    about: { x: 70, y: 40, crop: 100 }
+    hero: { x: 50, y: 55, crop: 100, size: 100 },
+    about: { x: 70, y: 40, crop: 100, size: 100 }
   };
 
   function apply(frame, v) {
     if (!frame) return;
-    // crop% > 100 zooms in on the source, < 100 zooms out. Frame size never changes.
-    const size = v.crop + "% auto";
-    frame.style.setProperty("background-size", size, "important");
+    // Crop zoom changes what part of the photo is visible. Size zoom changes the frame itself.
+    frame.style.setProperty("background-size", v.crop + "% auto", "important");
     frame.style.setProperty("background-position", v.x + "% " + v.y + "%", "important");
+    frame.style.setProperty("transform", "scale(" + (v.size / 100) + ")", "important");
+    frame.style.setProperty("transform-origin", "center center", "important");
   }
 
   function vals(name, v) {
-    return name + ":\nbackground-size: " + v.crop + "% auto;\nbackground-position: " + v.x + "% " + v.y + "%;";
+    return name + ":\nbackground-size: " + v.crop + "% auto;\nbackground-position: " + v.x + "% " + v.y + "%;\nframe-scale: " + (v.size / 100).toFixed(2) + ";";
   }
 
   const panel = document.createElement("div");
@@ -56,6 +55,8 @@
       <input type="range" id="hy-s" min="0" max="100" value="55" />
       <label>Crop zoom (frame stays same) <span id="hcrop">100</span>%</label>
       <input type="range" id="hcrop-s" min="60" max="180" value="100" />
+      <label>Size zoom (frame changes) <span id="hsize">100</span>%</label>
+      <input type="range" id="hsize-s" min="70" max="140" value="100" />
       <div class="values" id="hero-vals"></div>
     </div>
     <div class="section">
@@ -66,6 +67,8 @@
       <input type="range" id="ay-s" min="0" max="100" value="40" />
       <label>Crop zoom (frame stays same) <span id="acrop">100</span>%</label>
       <input type="range" id="acrop-s" min="60" max="180" value="100" />
+      <label>Size zoom (frame changes) <span id="asize">100</span>%</label>
+      <input type="range" id="asize-s" min="70" max="140" value="100" />
       <div class="values" id="about-vals"></div>
     </div>
     <div class="row">
@@ -81,9 +84,11 @@
     document.getElementById("hx").textContent = state.hero.x;
     document.getElementById("hy").textContent = state.hero.y;
     document.getElementById("hcrop").textContent = state.hero.crop;
+    document.getElementById("hsize").textContent = state.hero.size;
     document.getElementById("ax").textContent = state.about.x;
     document.getElementById("ay").textContent = state.about.y;
     document.getElementById("acrop").textContent = state.about.crop;
+    document.getElementById("asize").textContent = state.about.size;
     document.getElementById("hero-vals").textContent = vals("HERO", state.hero);
     document.getElementById("about-vals").textContent = vals("ABOUT", state.about);
   }
@@ -97,9 +102,11 @@
   bind("hx-s", "hero", "x");
   bind("hy-s", "hero", "y");
   bind("hcrop-s", "hero", "crop");
+  bind("hsize-s", "hero", "size");
   bind("ax-s", "about", "x");
   bind("ay-s", "about", "y");
   bind("acrop-s", "about", "crop");
+  bind("asize-s", "about", "size");
 
   document.getElementById("copy-all").addEventListener("click", () => {
     const text = vals("HERO", state.hero) + "\n\n" + vals("ABOUT", state.about);
@@ -110,14 +117,16 @@
   });
 
   document.getElementById("reset").addEventListener("click", () => {
-    state.hero = { x: 50, y: 55, crop: 100 };
-    state.about = { x: 70, y: 40, crop: 100 };
+    state.hero = { x: 50, y: 55, crop: 100, size: 100 };
+    state.about = { x: 70, y: 40, crop: 100, size: 100 };
     document.getElementById("hx-s").value = 50;
     document.getElementById("hy-s").value = 55;
     document.getElementById("hcrop-s").value = 100;
+    document.getElementById("hsize-s").value = 100;
     document.getElementById("ax-s").value = 70;
     document.getElementById("ay-s").value = 40;
     document.getElementById("acrop-s").value = 100;
+    document.getElementById("asize-s").value = 100;
     refresh();
   });
 
