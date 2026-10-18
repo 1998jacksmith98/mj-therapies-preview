@@ -3,11 +3,12 @@
 
   const style = document.createElement("link");
   style.rel = "stylesheet";
-  style.href = "css/edit.css?v=7";
+  style.href = "css/edit.css?v=8";
   document.head.appendChild(style);
 
   const heroImg = document.querySelector(".hero-photo");
   const aboutImg = document.querySelector(".grad-band img");
+  const heroFrameEl = document.querySelector(".hero-frame");
 
   function makeLayer(img) {
     if (!img) return null;
@@ -22,10 +23,11 @@
     layer.style.backgroundImage = "url(" + src + ")";
     frame.insertBefore(layer, frame.firstChild);
 
-    // Keep text above the photo layer
     [...frame.children].forEach((child) => {
-      if (child !== layer) child.style.setProperty("position", "relative", "important");
-      if (child !== layer) child.style.setProperty("z-index", "2", "important");
+      if (child !== layer) {
+        child.style.setProperty("position", "relative", "important");
+        child.style.setProperty("z-index", "2", "important");
+      }
     });
 
     return { frame, layer };
@@ -35,22 +37,38 @@
   const about = makeLayer(aboutImg);
 
   const state = {
-    hero: { x: 50, y: 55, crop: 100, size: 100 },
+    hero: { x: 50, y: 55, crop: 100, size: 100, fade: 54 },
     about: { x: 70, y: 40, crop: 100, size: 100 }
   };
 
   function apply(target, v) {
     if (!target) return;
-    // Crop zoom only changes the background size inside the locked frame.
     target.layer.style.setProperty("background-size", v.crop + "% auto", "important");
     target.layer.style.setProperty("background-position", v.x + "% " + v.y + "%", "important");
-    // Size zoom only scales the photo layer, never the text.
     target.layer.style.setProperty("transform", "scale(" + (v.size / 100) + ")", "important");
     target.layer.style.setProperty("transform-origin", "center center", "important");
   }
 
+  function applyFade(pct) {
+    if (!heroFrameEl) return;
+    const solid = Math.max(0, pct - 26);
+    const mid = Math.max(0, pct - 14);
+    const end = pct;
+    const css = "linear-gradient(90deg, #f6f3ee 0%, #f6f3ee " + solid + "%, rgba(246,243,238,0.55) " + mid + "%, rgba(246,243,238,0) " + end + "%)";
+    // Override the existing ::before by injecting a style rule
+    let tag = document.getElementById("edit-fade-style");
+    if (!tag) {
+      tag = document.createElement("style");
+      tag.id = "edit-fade-style";
+      document.head.appendChild(tag);
+    }
+    tag.textContent = ".hero-frame::before { background: " + css + " !important; }";
+  }
+
   function vals(name, v) {
-    return name + ":\nbackground-size: " + v.crop + "% auto;\nbackground-position: " + v.x + "% " + v.y + "%;\nphoto-scale: " + (v.size / 100).toFixed(2) + ";";
+    let s = name + ":\nbackground-size: " + v.crop + "% auto;\nbackground-position: " + v.x + "% " + v.y + "%;\nphoto-scale: " + (v.size / 100).toFixed(2) + ";";
+    if (v.fade !== undefined) s += "\nfade-end: " + v.fade + "%;";
+    return s;
   }
 
   const panel = document.createElement("div");
@@ -66,6 +84,8 @@
       <input type="range" id="hcrop-s" min="60" max="180" value="100" />
       <label>Size zoom (photo only) <span id="hsize">100</span>%</label>
       <input type="range" id="hsize-s" min="70" max="140" value="100" />
+      <label>Fade (how far it reaches) <span id="hfade">54</span>%</label>
+      <input type="range" id="hfade-s" min="30" max="90" value="54" />
       <div class="values" id="hero-vals"></div>
     </div>
     <div class="section">
@@ -90,10 +110,12 @@
   function refresh() {
     apply(hero, state.hero);
     apply(about, state.about);
+    applyFade(state.hero.fade);
     document.getElementById("hx").textContent = state.hero.x;
     document.getElementById("hy").textContent = state.hero.y;
     document.getElementById("hcrop").textContent = state.hero.crop;
     document.getElementById("hsize").textContent = state.hero.size;
+    document.getElementById("hfade").textContent = state.hero.fade;
     document.getElementById("ax").textContent = state.about.x;
     document.getElementById("ay").textContent = state.about.y;
     document.getElementById("acrop").textContent = state.about.crop;
@@ -112,6 +134,7 @@
   bind("hy-s", "hero", "y");
   bind("hcrop-s", "hero", "crop");
   bind("hsize-s", "hero", "size");
+  bind("hfade-s", "hero", "fade");
   bind("ax-s", "about", "x");
   bind("ay-s", "about", "y");
   bind("acrop-s", "about", "crop");
@@ -126,12 +149,13 @@
   });
 
   document.getElementById("reset").addEventListener("click", () => {
-    state.hero = { x: 50, y: 55, crop: 100, size: 100 };
+    state.hero = { x: 50, y: 55, crop: 100, size: 100, fade: 54 };
     state.about = { x: 70, y: 40, crop: 100, size: 100 };
     document.getElementById("hx-s").value = 50;
     document.getElementById("hy-s").value = 55;
     document.getElementById("hcrop-s").value = 100;
     document.getElementById("hsize-s").value = 100;
+    document.getElementById("hfade-s").value = 54;
     document.getElementById("ax-s").value = 70;
     document.getElementById("ay-s").value = 40;
     document.getElementById("acrop-s").value = 100;
