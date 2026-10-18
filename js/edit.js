@@ -3,42 +3,46 @@
 
   const style = document.createElement("link");
   style.rel = "stylesheet";
-  style.href = "css/edit.css?v=4";
+  style.href = "css/edit.css?v=5";
   document.head.appendChild(style);
 
-  const hero = document.querySelector(".hero-photo");
-  const about = document.querySelector(".grad-band img");
+  const heroImg = document.querySelector(".hero-photo");
+  const aboutImg = document.querySelector(".grad-band img");
+
+  function makeCrop(img) {
+    if (!img) return null;
+    const frame = img.parentElement;
+    const src = img.currentSrc || img.src;
+    // Hide the original img so it cannot affect layout.
+    img.style.setProperty("display", "none", "important");
+    // Lock the frame and paint the photo as a background so size never changes.
+    frame.style.setProperty("position", "relative", "important");
+    frame.style.setProperty("overflow", "hidden", "important");
+    frame.style.setProperty("background-image", "url(" + src + ")", "important");
+    frame.style.setProperty("background-repeat", "no-repeat", "important");
+    frame.style.setProperty("background-size", "cover", "important");
+    frame.style.setProperty("background-position", "50% 50%", "important");
+    return frame;
+  }
+
+  const heroFrame = makeCrop(heroImg);
+  const aboutFrame = makeCrop(aboutImg);
 
   const state = {
     hero: { x: 50, y: 55, crop: 100 },
     about: { x: 70, y: 40, crop: 100 }
   };
 
-  function lockFrame(el) {
-    if (!el || el.dataset.locked) return;
-    const parent = el.parentElement;
-    if (parent) parent.style.overflow = "hidden";
-    el.dataset.locked = "1";
-  }
-
-  function apply(el, v) {
-    if (!el) return;
-    lockFrame(el);
-    // Outer size stays fixed. Only the crop moves and scales inside the same box.
-    el.style.setProperty("position", "absolute", "important");
-    el.style.setProperty("width", "100%", "important");
-    el.style.setProperty("height", "100%", "important");
-    el.style.setProperty("left", "0", "important");
-    el.style.setProperty("right", "0", "important");
-    el.style.setProperty("top", "0", "important");
-    el.style.setProperty("object-fit", "cover", "important");
-    el.style.setProperty("object-position", v.x + "% " + v.y + "%", "important");
-    el.style.setProperty("transform", "scale(" + (v.crop / 100) + ")", "important");
-    el.style.setProperty("transform-origin", v.x + "% " + v.y + "%", "important");
+  function apply(frame, v) {
+    if (!frame) return;
+    // crop% > 100 zooms in on the source, < 100 zooms out. Frame size never changes.
+    const size = v.crop + "% auto";
+    frame.style.setProperty("background-size", size, "important");
+    frame.style.setProperty("background-position", v.x + "% " + v.y + "%", "important");
   }
 
   function vals(name, v) {
-    return name + ":\nobject-position: " + v.x + "% " + v.y + "%;\ntransform: scale(" + (v.crop / 100).toFixed(2) + ");\ntransform-origin: " + v.x + "% " + v.y + "%;";
+    return name + ":\nbackground-size: " + v.crop + "% auto;\nbackground-position: " + v.x + "% " + v.y + "%;";
   }
 
   const panel = document.createElement("div");
@@ -51,7 +55,7 @@
       <label>Y (up ↕ down) <span id="hy">55</span></label>
       <input type="range" id="hy-s" min="0" max="100" value="55" />
       <label>Crop zoom (frame stays same) <span id="hcrop">100</span>%</label>
-      <input type="range" id="hcrop-s" min="70" max="150" value="100" />
+      <input type="range" id="hcrop-s" min="60" max="180" value="100" />
       <div class="values" id="hero-vals"></div>
     </div>
     <div class="section">
@@ -61,7 +65,7 @@
       <label>Y (up ↕ down) <span id="ay">40</span></label>
       <input type="range" id="ay-s" min="0" max="100" value="40" />
       <label>Crop zoom (frame stays same) <span id="acrop">100</span>%</label>
-      <input type="range" id="acrop-s" min="70" max="150" value="100" />
+      <input type="range" id="acrop-s" min="60" max="180" value="100" />
       <div class="values" id="about-vals"></div>
     </div>
     <div class="row">
@@ -72,8 +76,8 @@
   document.body.appendChild(panel);
 
   function refresh() {
-    apply(hero, state.hero);
-    apply(about, state.about);
+    apply(heroFrame, state.hero);
+    apply(aboutFrame, state.about);
     document.getElementById("hx").textContent = state.hero.x;
     document.getElementById("hy").textContent = state.hero.y;
     document.getElementById("hcrop").textContent = state.hero.crop;
