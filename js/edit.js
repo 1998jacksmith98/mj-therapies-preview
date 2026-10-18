@@ -3,45 +3,54 @@
 
   const style = document.createElement("link");
   style.rel = "stylesheet";
-  style.href = "css/edit.css?v=6";
+  style.href = "css/edit.css?v=7";
   document.head.appendChild(style);
 
   const heroImg = document.querySelector(".hero-photo");
   const aboutImg = document.querySelector(".grad-band img");
 
-  function makeCrop(img) {
+  function makeLayer(img) {
     if (!img) return null;
     const frame = img.parentElement;
     const src = img.currentSrc || img.src;
     img.style.setProperty("display", "none", "important");
     frame.style.setProperty("position", "relative", "important");
     frame.style.setProperty("overflow", "hidden", "important");
-    frame.style.setProperty("background-image", "url(" + src + ")", "important");
-    frame.style.setProperty("background-repeat", "no-repeat", "important");
-    frame.style.setProperty("background-size", "cover", "important");
-    frame.style.setProperty("background-position", "50% 50%", "important");
-    return frame;
+
+    const layer = document.createElement("div");
+    layer.style.cssText = "position:absolute;inset:0;z-index:0;background-repeat:no-repeat;background-size:cover;background-position:50% 50%;pointer-events:none;";
+    layer.style.backgroundImage = "url(" + src + ")";
+    frame.insertBefore(layer, frame.firstChild);
+
+    // Keep text above the photo layer
+    [...frame.children].forEach((child) => {
+      if (child !== layer) child.style.setProperty("position", "relative", "important");
+      if (child !== layer) child.style.setProperty("z-index", "2", "important");
+    });
+
+    return { frame, layer };
   }
 
-  const heroFrame = makeCrop(heroImg);
-  const aboutFrame = makeCrop(aboutImg);
+  const hero = makeLayer(heroImg);
+  const about = makeLayer(aboutImg);
 
   const state = {
     hero: { x: 50, y: 55, crop: 100, size: 100 },
     about: { x: 70, y: 40, crop: 100, size: 100 }
   };
 
-  function apply(frame, v) {
-    if (!frame) return;
-    // Crop zoom changes what part of the photo is visible. Size zoom changes the frame itself.
-    frame.style.setProperty("background-size", v.crop + "% auto", "important");
-    frame.style.setProperty("background-position", v.x + "% " + v.y + "%", "important");
-    frame.style.setProperty("transform", "scale(" + (v.size / 100) + ")", "important");
-    frame.style.setProperty("transform-origin", "center center", "important");
+  function apply(target, v) {
+    if (!target) return;
+    // Crop zoom only changes the background size inside the locked frame.
+    target.layer.style.setProperty("background-size", v.crop + "% auto", "important");
+    target.layer.style.setProperty("background-position", v.x + "% " + v.y + "%", "important");
+    // Size zoom only scales the photo layer, never the text.
+    target.layer.style.setProperty("transform", "scale(" + (v.size / 100) + ")", "important");
+    target.layer.style.setProperty("transform-origin", "center center", "important");
   }
 
   function vals(name, v) {
-    return name + ":\nbackground-size: " + v.crop + "% auto;\nbackground-position: " + v.x + "% " + v.y + "%;\nframe-scale: " + (v.size / 100).toFixed(2) + ";";
+    return name + ":\nbackground-size: " + v.crop + "% auto;\nbackground-position: " + v.x + "% " + v.y + "%;\nphoto-scale: " + (v.size / 100).toFixed(2) + ";";
   }
 
   const panel = document.createElement("div");
@@ -55,7 +64,7 @@
       <input type="range" id="hy-s" min="0" max="100" value="55" />
       <label>Crop zoom (frame stays same) <span id="hcrop">100</span>%</label>
       <input type="range" id="hcrop-s" min="60" max="180" value="100" />
-      <label>Size zoom (frame changes) <span id="hsize">100</span>%</label>
+      <label>Size zoom (photo only) <span id="hsize">100</span>%</label>
       <input type="range" id="hsize-s" min="70" max="140" value="100" />
       <div class="values" id="hero-vals"></div>
     </div>
@@ -67,7 +76,7 @@
       <input type="range" id="ay-s" min="0" max="100" value="40" />
       <label>Crop zoom (frame stays same) <span id="acrop">100</span>%</label>
       <input type="range" id="acrop-s" min="60" max="180" value="100" />
-      <label>Size zoom (frame changes) <span id="asize">100</span>%</label>
+      <label>Size zoom (photo only) <span id="asize">100</span>%</label>
       <input type="range" id="asize-s" min="70" max="140" value="100" />
       <div class="values" id="about-vals"></div>
     </div>
@@ -79,8 +88,8 @@
   document.body.appendChild(panel);
 
   function refresh() {
-    apply(heroFrame, state.hero);
-    apply(aboutFrame, state.about);
+    apply(hero, state.hero);
+    apply(about, state.about);
     document.getElementById("hx").textContent = state.hero.x;
     document.getElementById("hy").textContent = state.hero.y;
     document.getElementById("hcrop").textContent = state.hero.crop;
