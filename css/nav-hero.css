@@ -70,7 +70,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   max-width: 640px;
   margin: 0 auto;
 }
@@ -82,7 +82,7 @@
   opacity: 0.85;
 }
 .io-link img {
-  width: 140px;
+  width: 70px;
   height: auto;
   display: block;
 }
@@ -91,10 +91,30 @@
   font-size: 14px;
   line-height: 1.55;
   color: #1c1614;
-  max-width: 520px;
+  max-width: 420px;
+}
+.gosc-badge {
+  width: 70px;
+  height: auto;
+  display: block;
 }
 
 @media (min-width: 900px) {
+  .io-inner {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    max-width: 800px;
+  }
+  .io-link img,
+  .gosc-badge {
+    width: 80px;
+  }
+  .io-text {
+    max-width: 420px;
+    text-align: left;
+  }
   .grad-band {
     min-height: 0 !important;
     height: auto !important;
