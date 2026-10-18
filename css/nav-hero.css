@@ -80,7 +80,7 @@
     position: relative;
     z-index: 2;
     margin: 0 0 18px;
-    font-size: 56px;
+    font-size: 68px;
     color: #8d1c2b;
   }
   .grad-band img {
@@ -99,10 +99,10 @@
     content: "{" !important;
     position: absolute;
     top: 18%;
-    height: 624px;
+    height: 874px;
     transform: none;
     font-family: "Great Vibes", cursive;
-    font-size: 420px;
+    font-size: 560px;
     font-weight: 400;
     color: #8d1c2b;
     opacity: 1;
