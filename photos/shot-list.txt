@@ -21,3 +21,4 @@ owner-graduation-portrait.jpg | Sent by Jack directly, from private IG post DMLn
 logo.jpg | https://www.instagram.com/mjtherapies/ | profile image | Best publicly available profile-logo asset retrieved; 150x150 avatar, flagged as low resolution.
 scroll-scrub.mp4 | Jack-supplied attachment | video | Jack-supplied attachment, scroll-scrub encode.
 gosc-registered-badge.jpg (brand/) | Jack-supplied attachment | badge | General Osteopathic Council 'I'm Registered' badge, osteopathy.org.uk. GOsC reg no. 11909. Jack-supplied 18 Oct 2026. 1371x1229, 96637 bytes.
+io-member-badge.png (brand/) | Jack-supplied attachment | badge | Institute of Osteopathy 'iO Member' badge (light blue/white), PNG. Institute of Osteopathy member badge. Jack-supplied 19 Oct 2026. 800x1109, 316714 bytes.
