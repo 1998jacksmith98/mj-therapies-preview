@@ -74,6 +74,13 @@
   max-width: 640px;
   margin: 0 auto;
 }
+.io-logos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
 .io-link {
   display: inline-block;
   transition: opacity 0.2s;
@@ -107,6 +114,9 @@
     gap: 32px;
     max-width: 800px;
   }
+  .io-logos {
+    display: contents;
+  }
   .io-link img,
   .gosc-badge {
     width: 80px;
@@ -114,6 +124,7 @@
   .io-text {
     max-width: 420px;
     text-align: left;
+    order: 0;
   }
   .grad-band {
     min-height: 0 !important;
