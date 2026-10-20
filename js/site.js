@@ -1,11 +1,12 @@
 const IG = "https://www.instagram.com/mjtherapies/";
+const HOME = "index.html";
 
 document.documentElement.classList.add("js");
 
 document.getElementById("site-header").innerHTML = `
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="#about">
+      <a class="brand" href="${HOME}#about">
         <img src="photos/logo.jpg" alt="" />
         <span>
           <span class="brand-name">MJ Therapies</span>
@@ -13,22 +14,24 @@ document.getElementById("site-header").innerHTML = `
         </span>
       </a>
       <nav class="desk-nav">
-        <a href="#about">About</a>
-        <a href="#help">Treatment</a>
-        <a href="#book">Book</a>
-        <a href="#reviews">Reviews</a>
+        <a href="${HOME}#about">About</a>
+        <a href="${HOME}#help">Treatment</a>
+        <a href="${HOME}#book">Book</a>
+        <a href="${HOME}#reviews">Reviews</a>
+        <a href="faqs.html">FAQs</a>
       </nav>
-      <a class="btn header-book" href="#book">Book</a>
+      <a class="btn header-book" href="${HOME}#book">Book</a>
       <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
   <div class="mobile-nav" hidden>
     <nav>
-      <a href="#about">About</a>
-      <a href="#help">Treatment</a>
-      <a href="#approach">How I work</a>
-      <a href="#book">Book</a>
-      <a href="#reviews">Reviews</a>
+      <a href="${HOME}#about">About</a>
+      <a href="${HOME}#help">Treatment</a>
+      <a href="${HOME}#approach">How I work</a>
+      <a href="${HOME}#book">Book</a>
+      <a href="${HOME}#reviews">Reviews</a>
+      <a href="faqs.html">FAQs</a>
     </nav>
   </div>
 `;
@@ -42,8 +45,9 @@ document.getElementById("site-footer").innerHTML = `
         <p>With Morgan.<br />Gravesend, Meopham and Eltham.</p>
       </div>
       <div>
-        <p><a href="#book">Book a clinic</a></p>
-        <p><a href="#help">What I can help with</a></p>
+        <p><a href="${HOME}#book">Book a clinic</a></p>
+        <p><a href="${HOME}#help">What I can help with</a></p>
+        <p><a href="faqs.html">FAQs</a></p>
         <p><a href="${IG}" target="_blank" rel="noreferrer">Instagram</a></p>
       </div>
       <div>
@@ -52,7 +56,7 @@ document.getElementById("site-footer").innerHTML = `
         <p>Eltham · Moreno Osteopathy</p>
       </div>
     </div>
-    <div class="wrap credit">Website built by <a href="https://halfpennydigital.co.uk/">Halfpenny Digital</a></div>
+    <div class="wrap credit">Website built by <a href="https://halfpennydigital.co.uk/">Halfpenny Digital</a> · <a href="privacy.html">Privacy policy</a></div>
   </footer>
 `;
 
@@ -84,29 +88,31 @@ document.getElementById("site-footer").innerHTML = `
 
 const btn = document.querySelector(".menu-btn");
 const nav = document.querySelector(".mobile-nav");
-btn.addEventListener("click", () => {
-  const open = !nav.hasAttribute("hidden");
-  if (open) {
-    nav.setAttribute("hidden", "");
-    document.body.classList.remove("menu-open");
-    btn.setAttribute("aria-label", "Menu");
-    btn.setAttribute("aria-expanded", "false");
-  } else {
-    nav.removeAttribute("hidden");
-    document.body.classList.add("menu-open");
-    btn.setAttribute("aria-label", "Close");
-    btn.setAttribute("aria-expanded", "true");
-  }
-});
-
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-  link.addEventListener("click", () => {
-    nav.setAttribute("hidden", "");
-    document.body.classList.remove("menu-open");
-    btn.setAttribute("aria-label", "Menu");
-    btn.setAttribute("aria-expanded", "false");
+if (btn && nav) {
+  btn.addEventListener("click", () => {
+    const open = !nav.hasAttribute("hidden");
+    if (open) {
+      nav.setAttribute("hidden", "");
+      document.body.classList.remove("menu-open");
+      btn.setAttribute("aria-label", "Menu");
+      btn.setAttribute("aria-expanded", "false");
+    } else {
+      nav.removeAttribute("hidden");
+      document.body.classList.add("menu-open");
+      btn.setAttribute("aria-label", "Close");
+      btn.setAttribute("aria-expanded", "true");
+    }
   });
-});
+
+  document.querySelectorAll('a[href^="#"], a[href^="index.html#"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.setAttribute("hidden", "");
+      document.body.classList.remove("menu-open");
+      btn.setAttribute("aria-label", "Menu");
+      btn.setAttribute("aria-expanded", "false");
+    });
+  });
+}
 
 const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
