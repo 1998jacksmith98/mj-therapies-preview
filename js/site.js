@@ -56,7 +56,7 @@ document.getElementById("site-footer").innerHTML = `
         <p>Eltham · Moreno Osteopathy</p>
       </div>
     </div>
-    <div class="wrap credit">Website built by <a href="https://halfpennydigital.co.uk/">Halfpenny Digital</a> · <a href="privacy.html">Privacy policy</a></div>
+    <div class="wrap credit">Website built by <a href="https://halfpennydigital.co.uk/">Halfpenny Digital</a> · <a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms</a></div>
   </footer>
 `;
 
