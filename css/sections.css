@@ -81,6 +81,6 @@
 }
 .quote-dots button.is-on { background: #8d1c2b; }
 @media (min-width: 900px) {
-  .quotes { padding: 0 12px 8px; }
+  .quotes { padding: 0 calc(50% - 170px) 8px; }
   .quote { flex-basis: 340px; }
 }
