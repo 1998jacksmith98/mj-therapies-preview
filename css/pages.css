@@ -32,26 +32,30 @@
 @media (min-width: 900px) {
   .about-short { display: none; }
   .about-full { display: block; }
-  .grad-band figcaption .about-full:last-of-type {
+  .grad-band figcaption {
+    position: relative;
+  }
+  .grad-band figcaption .about-glass {
     position: absolute;
-    z-index: 3;
-    bottom: 64px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 420px;
-    max-width: 80%;
+    z-index: 4;
+    left: 8%;
+    right: 8%;
+    bottom: -28px;
     margin: 0;
-    padding: 16px 18px;
-    font-size: 14px;
-    line-height: 1.5;
+    padding: 20px 28px 22px;
     text-align: center;
     color: #1c1614;
-    background: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 18px;
-    backdrop-filter: blur(18px) saturate(1.4);
-    -webkit-backdrop-filter: blur(18px) saturate(1.4);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.38);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 22px;
+    backdrop-filter: blur(20px) saturate(1.5);
+    -webkit-backdrop-filter: blur(20px) saturate(1.5);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  }
+  .grad-band figcaption .about-glass .about-full {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.55;
   }
 }
 @media (max-width: 899px) {
