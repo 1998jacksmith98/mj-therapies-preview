@@ -18,6 +18,7 @@ document.getElementById("site-header").innerHTML = `
         <a href="${HOME}#help">Treatment</a>
         <a href="${HOME}#book">Book</a>
         <a href="${HOME}#reviews">Reviews</a>
+        <a href="about.html">About</a>
         <a href="faqs.html">FAQs</a>
       </nav>
       <a class="btn header-book" href="${HOME}#book">Book</a>
@@ -31,7 +32,8 @@ document.getElementById("site-header").innerHTML = `
       <a href="${HOME}#approach">How I work</a>
       <a href="${HOME}#book">Book</a>
       <a href="${HOME}#reviews">Reviews</a>
-      <a href="faqs.html">FAQs</a>
+      <a href="about.html">About</a>
+        <a href="faqs.html">FAQs</a>
     </nav>
   </div>
 `;
@@ -47,7 +49,8 @@ document.getElementById("site-footer").innerHTML = `
       <div>
         <p><a href="${HOME}#book">Book a clinic</a></p>
         <p><a href="${HOME}#help">What I can help with</a></p>
-        <p><a href="faqs.html">FAQs</a></p>
+        <p><a href="about.html">About</a>
+        <a href="faqs.html">FAQs</a></p>
         <p><a href="${IG}" target="_blank" rel="noreferrer">Instagram</a></p>
       </div>
       <div>
