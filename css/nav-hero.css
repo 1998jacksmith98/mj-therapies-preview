@@ -190,10 +190,13 @@
   }
   .grad-band figcaption .about-glass {
     order: 1;
-    position: relative;
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 40px !important;
+    transform: translateX(-50%) !important;
     z-index: 3;
     width: min(640px, 72%);
-    margin: -90px auto 0;
+    margin: 0 !important;
     padding: 18px 24px 16px;
     font-size: 14px;
     line-height: 1.45;
@@ -267,7 +270,7 @@
 
 @media (max-width: 899px) {
   .grad-band figcaption .script-line {
-    font-size: 36px !important;
+    font-size: 40px !important;
     margin-bottom: 6px !important;
   }
   .grad-band figcaption .about-glass {
@@ -283,7 +286,7 @@
     margin: 0 0 10px !important;
   }
   .grad-band figcaption .btn {
-    font-size: 12px !important;
-    padding: 8px 12px !important;
+    font-size: 10px !important;
+    padding: 6px 10px !important;
   }
 }
