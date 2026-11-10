@@ -7,7 +7,7 @@ document.getElementById("site-header").innerHTML = `
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="${HOME}#about">
-        <img src="photos/logo.jpg" alt="" />
+        <img src="photos/logo.jpg" alt="MJ Therapies" />
         <span>
           <span class="brand-name">MJ Therapies</span>
           <span class="brand-sub">Osteopathy</span>
