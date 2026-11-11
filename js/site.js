@@ -1,4 +1,4 @@
-const GBP = "https://www.google.com/maps/place/MJ+Therapies/@51.3895994,-0.980123,9z/data=!4m7!3m6!1s0x8a7c961fa853e5cb:0xbaeb41b72c9c20db!8m2!3d51.3895994!4d0.2393594!16s%2Fg%2F11zz7szdcl";
+const GBP = "https://www.google.com/search?q=MJ+Therapies&kgmid=/g/11zz7szdcl";
 const IG = "https://www.instagram.com/mjtherapies/";
 const HOME = "index.html";
 
@@ -53,7 +53,7 @@ document.getElementById("site-footer").innerHTML = `
         <p><a href="about.html">About</a>
         <a href="faqs.html">FAQs</a></p>
         <p><a href="${IG}" target="_blank" rel="noreferrer">Instagram</a></p>
-        <p><a href="${GBP}" target="_blank" rel="noreferrer">Google reviews</a></p>
+        <p><a href="${GBP}" target="_blank" rel="noreferrer">Find me on Google</a></p>
       </div>
       <div>
         <p>Gravesend · ANA Therapies</p>
