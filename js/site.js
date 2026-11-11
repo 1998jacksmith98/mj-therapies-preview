@@ -1,3 +1,4 @@
+const GBP = "https://www.google.com/maps/search/?api=1&query=MJ+Therapies+Morgan+Jolley+osteopath+Gravesend";
 const IG = "https://www.instagram.com/mjtherapies/";
 const HOME = "index.html";
 
@@ -52,6 +53,7 @@ document.getElementById("site-footer").innerHTML = `
         <p><a href="about.html">About</a>
         <a href="faqs.html">FAQs</a></p>
         <p><a href="${IG}" target="_blank" rel="noreferrer">Instagram</a></p>
+        <p><a href="${GBP}" target="_blank" rel="noreferrer">Google reviews</a></p>
       </div>
       <div>
         <p>Gravesend · ANA Therapies</p>
