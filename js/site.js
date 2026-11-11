@@ -1,4 +1,4 @@
-const GBP = "https://www.google.com/search?q=MJ+Therapies&kgmid=/g/11zz7szdcl";
+const GBP = "https://www.google.com/maps/place/MJ+Therapies/@51.3896777,0.1569601,12z/data=!3m1!4b1!4m6!3m5!1s0x8a7c961fa853e5cb:0xbaeb41b72c9c20db!8m2!3d51.3895994!4d0.2393594!16s%2Fg%2F11zz7szdcl";
 const IG = "https://www.instagram.com/mjtherapies/";
 const HOME = "index.html";
 
