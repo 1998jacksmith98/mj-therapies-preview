@@ -1,4 +1,4 @@
-const GBP = "https://www.google.com/maps/search/?api=1&query=MJ+Therapies+Morgan+Jolley+osteopath+Gravesend";
+const GBP = "https://www.google.com/maps/place/MJ+Therapies/@51.3895994,-0.980123,9z/data=!4m7!3m6!1s0x8a7c961fa853e5cb:0xbaeb41b72c9c20db!8m2!3d51.3895994!4d0.2393594!16s%2Fg%2F11zz7szdcl";
 const IG = "https://www.instagram.com/mjtherapies/";
 const HOME = "index.html";
 
